@@ -6,28 +6,45 @@ import Sample from '../assets/sample.jpg'
 import Logo from 'assets/logo.webp'
 import HL from 'assets/highlight.svg'
 
+import Detail1a from 'assets/Detail1a.webp'
+import Detail2b from 'assets/Detail2b.webp'
+import Detail3a from 'assets/Detail3a.webp'
+import Detail3b from 'assets/Detail3b.webp'
+import Detail4a from 'assets/Detail4a.webp'
+import Detail5a from 'assets/Detail5a.webp'
+
 const CoverWrapper = styled.section`
   background-image: url(${HomeBg.src});
+`
+
+const RightBlock1a = styled.div`
+  background-image: url(${Detail1a.src});
+`
+const RightBlock2b = styled.div`
+  background-image: url(${Detail2b.src});
+`
+const RightBlock5a = styled.div`
+  background-image: url(${Detail5a.src});
+`
+const RightBlock3a = styled.div`
+  background-image: url(${Detail3a.src});
+`
+const RightBlock3b = styled.div`
+  background-image: url(${Detail3b.src});
+`
+const RightBlock4a = styled.div`
+  background-image: url(${Detail4a.src});
 `
 
 const RightBlock = styled.div`
   background-image: url(${Sample.src});
 `
 
-const Highlight = styled.li`
-  position: relative;
-
-  &::after {
-    background-image: url(${HL.src});
-    background-size: cover;
-  }
-`
-
 const Features = styled.ul`
   li {
     text-transform: uppercase;
     font-weight: bold;
-    color: rgba(0,0,0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 1.2rem;
   }
 `
@@ -76,16 +93,17 @@ export default function Cover() {
         </div>
       </section>
 
+      {/* 1a */}
       <section className="h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
-            <strong className='uppercase'>Dịch vụ</strong>
+            <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
-              TƯ VẤN THIẾT KẾ VÀ THI CÔNG{' '}
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className='text-justify leading-6 w-1/2'>
+                <p className="text-justify leading-6 w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -94,18 +112,250 @@ export default function Cover() {
               </div>
               <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
               <Features>
-                <Highlight>Thiết kế kiến trúc +</Highlight>
-                <li className='relative'>
-                  <img src={HL.src} className='absolute right-0 z-20' style={{height: '24px', right: '-100px'}}/>
-                  <span className='relative z-30'>Thiết kế nội thất +</span>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">Thiết kế kiến trúc +</span>
                 </li>
+                <li className="relative">Thiết kế nội thất +</li>
                 <li>Thi công phần thô +</li>
                 <li>Thi công phần hoàn thiện +</li>
               </Features>
             </div>
           </div>
         </div>
+        <RightBlock1a className="w-1/2" />
+      </section>
+      {/* 2a */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">Thiết kế nội thất +</span>
+                </li>
+                <li>Thi công phần thô +</li>
+                <li>Thi công phần hoàn thiện +</li>
+                <li>Thi công phần nội thất +</li>
+              </Features>
+            </div>
+          </div>
+        </div>
         <RightBlock className="w-1/2" />
+      </section>
+      {/* 2a */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">Thiết kế nội thất +</span>
+                </li>
+                <li>Thi công phần thô +</li>
+                <li>Thi công phần hoàn thiện +</li>
+                <li>Thi công phần nội thất +</li>
+              </Features>
+            </div>
+          </div>
+        </div>
+        <RightBlock2b className="w-1/2" />
+      </section>
+      {/* 3a */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li>Thiết kế nội thất +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">Thi công phần thô +</span>
+                </li>
+
+                <li>Thi công phần hoàn thiện +</li>
+                <li>Thi công phần nội thất +</li>
+              </Features>
+            </div>
+          </div>
+        </div>
+        <RightBlock3a className="w-1/2" />
+      </section>
+      {/* 3b */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li>Thiết kế nội thất +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">Thi công phần thô +</span>
+                </li>
+
+                <li>Thi công phần hoàn thiện +</li>
+                <li>Thi công phần nội thất +</li>
+              </Features>
+            </div>
+          </div>
+        </div>
+        <RightBlock3b className="w-1/2" />
+      </section>
+      {/* 4a */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li>Thiết kế nội thất +</li>
+                <li>Thi công phần thô +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">
+                    Thi công phần hoàn thiện +
+                  </span>
+                </li>
+                <li>Thi công phần nội thất +</li>
+              </Features>
+            </div>
+          </div>
+        </div>
+        <RightBlock4a className="w-1/2" />
+      </section>
+      {/* 5a */}
+      <section className="h-screen flex flex-wrap">
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12 text-right">
+            <strong className="uppercase">Dịch vụ</strong>
+            <h2 className="mt-3 uppercase text-brown text-bold">
+              TƯ VẤN THIẾT KẾ VÀ THI CÔNG
+            </h2>
+            <div className="font-light">
+              <div className="mt-2 flex items-end justify-end">
+                <p className="text-justify leading-6 w-1/2">
+                  Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
+                  tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
+                  hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
+                  mỹ cũng như chi phí tốt.
+                </p>
+              </div>
+              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
+              <Features>
+                <li>Thiết kế kiến trúc +</li>
+                <li>Thiết kế nội thất +</li>
+                <li>Thi công phần thô +</li>
+                <li>Thi công phần hoàn thiện +</li>
+                <li className="relative">
+                  <img
+                    src={HL.src}
+                    className="absolute right-0 z-20"
+                    style={{ height: '24px', right: '-100px' }}
+                  />
+                  <span className="relative z-30">
+                    Thi công phần nội thất +
+                  </span>
+                </li>
+              </Features>
+            </div>
+          </div>
+        </div>
+        <RightBlock5a className="w-1/2" />
       </section>
 
       {/* about us */}

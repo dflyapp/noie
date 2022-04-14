@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <section className="bg-primary pt-48">
+    <section className="bg-brown pt-48">
       <div className="container mx-auto">
         <p className="text-white text-5xl">
           Bất cứ điều gì bạn cần hỗ trợ.

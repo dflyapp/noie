@@ -76,7 +76,7 @@ export default function Cover() {
     <>
       <CoverWrapper className="h-screen relative bg-gray-200">
         <div className="pl-48 absolute bottom-16">
-          <h1 className="text-brown text-8xl uppercase">NOIE Việt Nam</h1>
+          <h1 className="text-brown text-4xl lg:text-8xl uppercase">NOIE Việt Nam</h1>
           {/* <img src={HomeBg.src} /> */}
           <span className="text-white font-light">
             Chuyên gia SÁNG TẠO - THIẾT KẾ TRẢI NGHIỆM KHÔNG GIAN và THI CÔNG
@@ -87,10 +87,10 @@ export default function Cover() {
 
       {/* about 1 */}
       <section className="h-screen flex flex-wrap">
-        <div className="w-1/2 p-48 bg-gray-300 flex justify-center items-center">
+        <div className="w-full lg:w-1/2 p-48 bg-gray-300 flex justify-center items-center">
           <Image src={Logo} alt="logo" />
         </div>
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
@@ -118,8 +118,8 @@ export default function Cover() {
 
       {/* about 2 */}
       <section className="h-screen flex flex-wrap">
-      <About2 className="w-1/2 p-48 bg-gray-300" />
-        <div className="w-1/2 px-4 flex items-center ">
+      <About2 className="w-full lg:w-1/2 p-48 bg-gray-300" />
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
@@ -147,8 +147,8 @@ export default function Cover() {
 
       {/* about 3 */}
       <section className="h-screen flex flex-wrap">
-        <About3 className="w-1/2 p-48 bg-gray-300" />
-        <div className="w-1/2 px-4 flex items-center ">
+        <About3 className="w-full lg:w-1/2 p-48 bg-gray-300" />
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
@@ -176,7 +176,7 @@ export default function Cover() {
 
       {/* 1a */}
       <section className="h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -208,11 +208,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock1a className="w-1/2" />
+        <RightBlock1a className="w-full lg:w-1/2" />
       </section>
       {/* 2a */}
       <section className="mt-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -245,11 +245,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock2a className="w-1/2" />
+        <RightBlock2a className="w-full lg:w-1/2" />
       </section>
       {/* 2a */}
       <section className="mt-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -282,11 +282,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock2b className="w-1/2" />
+        <RightBlock2b className="w-full lg:w-1/2" />
       </section>
       {/* 3a */}
       <section className="mt-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -320,11 +320,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock3a className="w-1/2" />
+        <RightBlock3a className="w-full lg:w-1/2" />
       </section>
       {/* 3b */}
       <section className="mt-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -358,11 +358,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock3b className="w-1/2" />
+        <RightBlock3b className="w-full lg:w-1/2" />
       </section>
       {/* 4a */}
       <section className="mt-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -397,11 +397,11 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock4a className="w-1/2" />
+        <RightBlock4a className="w-full lg:w-1/2" />
       </section>
       {/* 5a */}
       <section className="mt-12 mb-12 h-screen flex flex-wrap">
-        <div className="w-1/2 px-4 flex items-center ">
+        <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -436,7 +436,7 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock5a className="w-1/2" />
+        <RightBlock5a className="w-full lg:w-1/2" />
       </section>
 
       {/* about us */}

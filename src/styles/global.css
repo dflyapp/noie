@@ -4,11 +4,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
+@font-face {
+  font-family: myFont;
+  src: url('../assets/fonts/TTCommonsLight.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url('../assets/fonts/TTCommonsMedium.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url('../assets/fonts/TTCommonsBold.otf');
+  font-weight: 700;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: myFont, sans-serif;
+  font-size: 18px;
 }
 
 a {

@@ -5,9 +5,9 @@ import Logo from 'assets/logo.webp'
 
 const Menu = styled.ul`
   li {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     &:hover {
       opacity: 0.5;
@@ -51,7 +51,7 @@ export default function Header() {
         </a>
       </div>
       <div>
-        <Menu className='text-white flex uppercase'>
+        <Menu className='text-white uppercase hidden lg:flex'>
           <li>giới thiệu</li>
           <li>dịch vụ</li>
           <li>dự án</li>

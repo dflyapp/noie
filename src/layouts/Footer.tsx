@@ -24,39 +24,48 @@ export default function Footer() {
             src={Moon.src}
             alt="moon"
           />
-          <img
-            className="absolute l-0 t-0"
-            style={{ left: '8%', top: '-60px' }}
-            src={Plus.src}
-            alt="plug"
-          />
+
           <p className="text-brown text-center uppercase text-4xl w-10/12 mx-auto">
-            NOIE VIỆT NAM cam kết đồng hành cùng gia chủ để xây dựng nên những
-            không gian sống trãi nghiệm tối ưu nhất.
+            <span className='relative'>
+              NOIE
+              <img
+                className="absolute l-0 t-0 hidden lg:block"
+                style={{ left: '-50px', top: '-50px' }}
+                src={Plus.src}
+                alt="plug"
+              />
+            </span>{' '}
+            VIỆT NAM cam kết đồng hành cùng gia chủ để xây dựng nên những không
+            gian sống trãi nghiệm tối ưu nhất.
           </p>
 
           <div className="flex justify-between items-center">
-            <h1 className="text-4xl text-gray-400 uppercase">Thông tin</h1>
-            <h1 className="text-4xl text-gray-400 uppercase">
-              <Image src={FooterRightLogo} alt="right logo" width={200} height={30} />
-            </h1>
+            <h1 className="text-4xl text-gray-400 uppercase ml-24">Thông tin</h1>
+            <div className="text-4xl text-gray-400 uppercase">
+              <Image
+                src={FooterRightLogo}
+                alt="right logo"
+                width={200}
+                height={30}
+              />
+            </div>
           </div>
         </div>
       </section>
       {/* background image */}
-      <BackgroundImage className="bg-gray-300 pt-12 pb-48">
+      <BackgroundImage className="bg-gray-300 pb-48">
         <div className="container mx-auto flex justify-between">
           <div className="text-white uppercase text-center">
-            <h1 className='font-bold'>Hãy liên hệ với chúng tôi</h1>
-            <p className='font-light'>info.noie@gmail.com</p>
-            <div className='text-center mt-24'>
-              <p className='font-light'>Địa chỉ</p>
-              <p className='font-light'>Hotline</p>
-              <p className='font-bold'>Mạng xã hội</p>
+            <h1 className="font-bold">Hãy liên hệ với chúng tôi</h1>
+            <p className="font-light">info.noie@gmail.com</p>
+            <div className="text-center mt-24">
+              <p className="font-light">Địa chỉ</p>
+              <p className="font-light">Hotline</p>
+              <p className="font-bold">Mạng xã hội</p>
             </div>
           </div>
           {/* logo */}
-          <div>
+          <div className='pt-12'>
             <Image src={Logo} alt="logo" width={150} height={130} />
           </div>
         </div>

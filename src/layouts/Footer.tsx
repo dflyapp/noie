@@ -39,9 +39,9 @@ export default function Footer() {
             gian sống trãi nghiệm tối ưu nhất.
           </p>
 
-          <div className="flex justify-between items-center">
-            <h1 className="text-4xl text-gray-400 uppercase ml-24">Thông tin</h1>
-            <div className="text-4xl text-gray-400 uppercase">
+          <div className="flex justify-between items-center mt-12">
+            <h1 className="text-2xl lg:text-4xl text-gray-400 uppercase ml-4 lg:ml-24 mt-0">Thông tin</h1>
+            <div>
               <Image
                 src={FooterRightLogo}
                 alt="right logo"

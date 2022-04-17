@@ -75,8 +75,10 @@ export default function Cover() {
   return (
     <>
       <CoverWrapper className="h-screen relative bg-gray-200">
-        <div className="pl-48 absolute bottom-16">
-          <h1 className="text-brown text-4xl lg:text-8xl uppercase">NOIE Việt Nam</h1>
+        <div className="pl-4 lg:pl-48 absolute bottom-16">
+          <h1 className="text-brown text-4xl lg:text-8xl uppercase">
+            NOIE Việt Nam
+          </h1>
           {/* <img src={HomeBg.src} /> */}
           <span className="text-white font-light">
             Chuyên gia SÁNG TẠO - THIẾT KẾ TRẢI NGHIỆM KHÔNG GIAN và THI CÔNG
@@ -118,7 +120,7 @@ export default function Cover() {
 
       {/* about 2 */}
       <section className="h-screen flex flex-wrap">
-      <About2 className="w-full lg:w-1/2 p-48 bg-gray-300" />
+        <About2 className="w-full lg:w-1/2 p-48 bg-gray-300" />
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
           <div className="px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
@@ -184,7 +186,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -220,7 +222,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -257,7 +259,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -294,7 +296,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -332,7 +334,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -370,7 +372,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm
@@ -409,7 +411,7 @@ export default function Cover() {
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-1/2">
+                <p className="text-justify leading-6 w-full lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm

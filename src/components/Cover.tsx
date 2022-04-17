@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 import HomeBg from '../assets/home_bg.jpg'
-import Sample from '../assets/sample.jpg'
+import BigN from '../assets/logo-n.webp'
 import Logo from 'assets/logo.webp'
 import HL from 'assets/highlight.svg'
 
@@ -58,10 +58,6 @@ const RightBlock4a = styled.div`
   background-image: url(${Detail4a.src});
 `
 
-const RightBlock = styled.div`
-  background-image: url(${Sample.src});
-`
-
 const Features = styled.ul`
   li {
     text-transform: uppercase;
@@ -74,10 +70,11 @@ const Features = styled.ul`
 export default function Cover() {
   return (
     <>
-      <CoverWrapper className="h-screen relative bg-gray-200">
+      <CoverWrapper className="h-screen w-screen relative bg-gray-200">
         <div className="pl-4 lg:pl-48 absolute bottom-16">
-          <h1 className="text-brown text-4xl lg:text-8xl uppercase">
-            NOIE Việt Nam
+          <h1 className="text-brown text-4xl lg:text-8xl uppercase relative z-0">
+            <img src={BigN.src} alt="logo" className='hidden lg:block absolute z-10' style={{width: '220px', left: '-140px', top: '-130px'}} />
+            <span className='relative z-20'>NOIE Việt Nam</span>
           </h1>
           {/* <img src={HomeBg.src} /> */}
           <span className="text-white font-light">
@@ -88,12 +85,12 @@ export default function Cover() {
       </CoverWrapper>
 
       {/* about 1 */}
-      <section className="h-screen flex flex-wrap">
-        <div className="w-full lg:w-1/2 p-48 bg-gray-300 flex justify-center items-center">
+      <section className="h-auto lg:h-screen flex flex-wrap">
+        <div className="w-full lg:w-1/2 px-2 lg:px-48 bg-gray-300 flex justify-center items-center">
           <Image src={Logo} alt="logo" />
         </div>
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12">
+          <div className="px-2 lg:px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
               <p className="mt-2">
@@ -119,10 +116,10 @@ export default function Cover() {
       </section>
 
       {/* about 2 */}
-      <section className="h-screen flex flex-wrap">
-        <About2 className="w-full lg:w-1/2 p-48 bg-gray-300" />
+      <section className="h-auto lg:h-screen flex flex-wrap">
+        <About2 className="w-full lg:w-1/2 px-2 lg:px-48 bg-gray-300" />
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12">
+          <div className="px-2 lg:px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
               <p className="mt-2">
@@ -148,10 +145,10 @@ export default function Cover() {
       </section>
 
       {/* about 3 */}
-      <section className="h-screen flex flex-wrap">
-        <About3 className="w-full lg:w-1/2 p-48 bg-gray-300" />
+      <section className="h-auto lg:h-screen flex flex-wrap">
+        <About3 className="w-full lg:w-1/2 px-2 lg:px-48 bg-gray-300" />
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12">
+          <div className="px-2 lg:px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
               <p className="mt-2">
@@ -177,9 +174,9 @@ export default function Cover() {
       </section>
 
       {/* 1a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -198,7 +195,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">Thiết kế kiến trúc +</span>
@@ -213,9 +210,9 @@ export default function Cover() {
         <RightBlock1a className="w-full lg:w-1/2" />
       </section>
       {/* 2a */}
-      <section className="mt-12 h-screen flex flex-wrap">
+      <section className="mt-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -235,7 +232,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">Thiết kế nội thất +</span>
@@ -250,9 +247,9 @@ export default function Cover() {
         <RightBlock2a className="w-full lg:w-1/2" />
       </section>
       {/* 2a */}
-      <section className="mt-12 h-screen flex flex-wrap">
+      <section className="mt-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -272,7 +269,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">Thiết kế nội thất +</span>
@@ -287,9 +284,9 @@ export default function Cover() {
         <RightBlock2b className="w-full lg:w-1/2" />
       </section>
       {/* 3a */}
-      <section className="mt-12 h-screen flex flex-wrap">
+      <section className="mt-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -310,7 +307,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">Thi công phần thô +</span>
@@ -325,9 +322,9 @@ export default function Cover() {
         <RightBlock3a className="w-full lg:w-1/2" />
       </section>
       {/* 3b */}
-      <section className="mt-12 h-screen flex flex-wrap">
+      <section className="mt-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -348,7 +345,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">Thi công phần thô +</span>
@@ -363,9 +360,9 @@ export default function Cover() {
         <RightBlock3b className="w-full lg:w-1/2" />
       </section>
       {/* 4a */}
-      <section className="mt-12 h-screen flex flex-wrap">
+      <section className="mt-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -387,7 +384,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">
@@ -402,9 +399,9 @@ export default function Cover() {
         <RightBlock4a className="w-full lg:w-1/2" />
       </section>
       {/* 5a */}
-      <section className="mt-12 mb-12 h-screen flex flex-wrap">
+      <section className="mt-12 mb-12 h-auto lg:h-screen flex flex-wrap">
         <div className="w-full lg:w-1/2 px-4 flex items-center ">
-          <div className="px-12 text-right">
+          <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
@@ -427,7 +424,7 @@ export default function Cover() {
                 <li className="relative">
                   <img
                     src={HL.src}
-                    className="absolute right-0 z-20"
+                    className="absolute right-0 z-20 hidden lg:block"
                     style={{ height: '24px', right: '-100px' }}
                   />
                   <span className="relative z-30">

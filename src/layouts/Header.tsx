@@ -44,8 +44,8 @@ export default function Header() {
     window.addEventListener('scroll', listenScrollEvent)
   }, [])
   return (
-    <Wrapper className={`fixed top-0 w-full left-0 pt-4 pb-8 z-10 px-2 flex justify-between items-center ${scrolled && 'is-scrolled'}`}>
-      <div className='ml-12'>
+    <Wrapper className={`z-90 fixed top-0 w-full left-0 pt-4 pb-8 z-10 px-2 flex justify-between items-center ${scrolled && 'is-scrolled'}`}>
+      <div className='ml-2 lg:ml-12'>
         <a className='text-white cursor-pointer'>
           <img src={Logo.src} width="120"/>
         </a>
@@ -59,7 +59,7 @@ export default function Header() {
           <li>liên hệ</li>
         </Menu>
       </div>
-      <div className='mr-12'>
+      <div className='mr-2 lg:mr-12'>
         <Register className='uppercase text-white'>Đăng ký tư vấn</Register>
       </div>
     </Wrapper>

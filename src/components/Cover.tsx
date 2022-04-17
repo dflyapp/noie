@@ -7,19 +7,41 @@ import Logo from 'assets/logo.webp'
 import HL from 'assets/highlight.svg'
 
 import Detail1a from 'assets/Detail1a.webp'
+import Detail2a from 'assets/Detail2a.webp'
 import Detail2b from 'assets/Detail2b.webp'
 import Detail3a from 'assets/Detail3a.webp'
 import Detail3b from 'assets/Detail3b.webp'
 import Detail4a from 'assets/Detail4a.webp'
 import Detail5a from 'assets/Detail5a.webp'
 
+import DetailAbout2 from 'assets/DetailAbout2.webp'
+import DetailAbout3 from 'assets/DetailAbout3.webp'
+
 const CoverWrapper = styled.section`
   background-image: url(${HomeBg.src});
+`
+
+const About2 = styled.div`
+  background-image: url(${DetailAbout2.src});
+  background-size: cover;
+  background-position: center;
+`
+
+const About3 = styled.div`
+  background-image: url(${DetailAbout3.src});
+  background-size: cover;
+  background-position: center;
 `
 
 const RightBlock1a = styled.div`
   background-image: url(${Detail1a.src});
 `
+const RightBlock2a = styled.div`
+  background-image: url(${Detail2a.src});
+  background-size: cover;
+  background-position: center;
+`
+
 const RightBlock2b = styled.div`
   background-image: url(${Detail2b.src});
 `
@@ -63,10 +85,69 @@ export default function Cover() {
         </div>
       </CoverWrapper>
 
+      {/* about 1 */}
       <section className="h-screen flex flex-wrap">
         <div className="w-1/2 p-48 bg-gray-300 flex justify-center items-center">
           <Image src={Logo} alt="logo" />
         </div>
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12">
+            <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
+            <div className="font-light">
+              <p className="mt-2">
+                Tại NOIE Việt Nam, chúng tôi xác định rõ trách nhiệm đồng hành
+                cùng gia chủ trong quá trình thiết kế và thi công, xây dựng môi
+                trường chuyên nghiệp hóa hình ảnh chúng tôi trong mắt đối tác.
+              </p>
+              <p className="mt-2">
+                Chúng tôi mong muốn tạo ra những không gian đề cao tính hợp lý,
+                thông qua những trãi nghiệm - việc nghiên cứu và nắm bắt nhu cầu
+                của từng chủ nhà. Từ đó tạo ra những giải pháp trong SÁNG TẠO -
+                THIẾT KẾ TRÃI NGHIỆM KHÔNG GIAN và THI CÔNG.
+              </p>
+              <p className="mt-2">
+                Chúng tôi luôn tin rằng thông qua những giải pháp đó, NOIE Việt
+                Nam sẽ phần nào giúp truyền tải mong muốn, sở thích và các giá
+                trị cốt lõi cũng như cá tính hóa hình ảnh của gia chủ theo một
+                cách tối ưu nhất.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* about 2 */}
+      <section className="h-screen flex flex-wrap">
+      <About2 className="w-1/2 p-48 bg-gray-300" />
+        <div className="w-1/2 px-4 flex items-center ">
+          <div className="px-12">
+            <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
+            <div className="font-light">
+              <p className="mt-2">
+                Tại NOIE Việt Nam, chúng tôi xác định rõ trách nhiệm đồng hành
+                cùng gia chủ trong quá trình thiết kế và thi công, xây dựng môi
+                trường chuyên nghiệp hóa hình ảnh chúng tôi trong mắt đối tác.
+              </p>
+              <p className="mt-2">
+                Chúng tôi mong muốn tạo ra những không gian đề cao tính hợp lý,
+                thông qua những trãi nghiệm - việc nghiên cứu và nắm bắt nhu cầu
+                của từng chủ nhà. Từ đó tạo ra những giải pháp trong SÁNG TẠO -
+                THIẾT KẾ TRÃI NGHIỆM KHÔNG GIAN và THI CÔNG.
+              </p>
+              <p className="mt-2">
+                Chúng tôi luôn tin rằng thông qua những giải pháp đó, NOIE Việt
+                Nam sẽ phần nào giúp truyền tải mong muốn, sở thích và các giá
+                trị cốt lõi cũng như cá tính hóa hình ảnh của gia chủ theo một
+                cách tối ưu nhất.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* about 3 */}
+      <section className="h-screen flex flex-wrap">
+        <About3 className="w-1/2 p-48 bg-gray-300" />
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
@@ -130,7 +211,7 @@ export default function Cover() {
         <RightBlock1a className="w-1/2" />
       </section>
       {/* 2a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
@@ -164,10 +245,10 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <RightBlock className="w-1/2" />
+        <RightBlock2a className="w-1/2" />
       </section>
       {/* 2a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
@@ -204,7 +285,7 @@ export default function Cover() {
         <RightBlock2b className="w-1/2" />
       </section>
       {/* 3a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
@@ -242,7 +323,7 @@ export default function Cover() {
         <RightBlock3a className="w-1/2" />
       </section>
       {/* 3b */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
@@ -280,7 +361,7 @@ export default function Cover() {
         <RightBlock3b className="w-1/2" />
       </section>
       {/* 4a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
@@ -319,7 +400,7 @@ export default function Cover() {
         <RightBlock4a className="w-1/2" />
       </section>
       {/* 5a */}
-      <section className="h-screen flex flex-wrap">
+      <section className="mt-12 mb-12 h-screen flex flex-wrap">
         <div className="w-1/2 px-4 flex items-center ">
           <div className="px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>

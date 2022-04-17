@@ -1,48 +1,66 @@
+import Image from 'next/image'
+import styled from 'styled-components'
+
+import Moon from 'assets/svg/horizon-moon.svg'
+import Plus from 'assets/svg/plus.svg'
+import FooterRightLogo from 'assets/footer-right-logo.webp'
+import Logo from 'assets/logo.webp'
+import FooterBg from 'assets/footer-bg.webp'
+
+const BackgroundImage = styled.div`
+  background-image: url(${FooterBg.src});
+  background-size: cover;
+  background-position: center;
+`
+
 export default function Footer() {
   return (
-    <section className="bg-brown pt-48">
-      <div className="container mx-auto">
-        <p className="text-white text-5xl">
-          Bất cứ điều gì bạn cần hỗ trợ.
-          <br /> Hãy liên hệ với chúng tôi
-        </p>
+    <>
+      <section className="pt-48">
+        <div className="mt-24 container mx-auto relative">
+          <img
+            className="absolute text-center l-0 r-0 ml-auto mr-auto"
+            style={{ left: 0, right: 0, top: '-100px' }}
+            src={Moon.src}
+            alt="moon"
+          />
+          <img
+            className="absolute l-0 t-0"
+            style={{ left: '8%', top: '-60px' }}
+            src={Plus.src}
+            alt="plug"
+          />
+          <p className="text-brown text-center uppercase text-4xl w-10/12 mx-auto">
+            NOIE VIỆT NAM cam kết đồng hành cùng gia chủ để xây dựng nên những
+            không gian sống trãi nghiệm tối ưu nhất.
+          </p>
 
-        <div className="w-full md:w-3/4">
-          <div className="flex flex-wrap">
-            <div className="w-1/2 px-4 text-white">
-              <h3 className="mt-12">Miền bắc</h3>
-              <p>
-                Địa chỉ: Tầng 4, sảnh B tòa nhà AZ Sky Tower Định Công, Hoàng
-                Mai, Hà Nội
-              </p>
-              <h3 className="mt-12">Miền nam</h3>
-              <p>
-                Địa chỉ: Tầng 4, sảnh B tòa nhà AZ Sky Tower Định Công, Hoàng
-                Mai, Hà Nội
-              </p>
-            </div>
-            <div className="w-1/2 px-4 text-white">
-              <h3 className="mt-12">Mạng xã hội</h3>
-              <p>
-                Địa chỉ: Tầng 4, sảnh B tòa nhà AZ Sky Tower Định Công, Hoàng
-                Mai, Hà Nội
-              </p>
-              <h3 className="mt-12">Chính sách</h3>
-              <ul>
-                <li>Điều khoản sử dụng</li>
-                <li>Chính sách bảo mật</li>
-              </ul>
-            </div>
+          <div className="flex justify-between items-center">
+            <h1 className="text-4xl text-gray-400 uppercase">Thông tin</h1>
+            <h1 className="text-4xl text-gray-400 uppercase">
+              <Image src={FooterRightLogo} alt="right logo" width={200} height={30} />
+            </h1>
           </div>
         </div>
-      </div>
-      <hr className="mt-12" />
-      <div className="container mx-auto text-white">
-        <p className="pt-4 pb-8 uppercase text-center text-xs">
-          © 2021 d+ studio | ĐKKD số: 0106850575 - Sở kế hoạch và đầu tư thành
-          phố Hà Nội cấp ngày 18/05/2015
-        </p>
-      </div>
-    </section>
+      </section>
+      {/* background image */}
+      <BackgroundImage className="bg-gray-300 pt-12 pb-48">
+        <div className="container mx-auto flex justify-between">
+          <div className="text-white uppercase text-center">
+            <h1 className='font-bold'>Hãy liên hệ với chúng tôi</h1>
+            <p className='font-light'>info.noie@gmail.com</p>
+            <div className='text-center mt-24'>
+              <p className='font-light'>Địa chỉ</p>
+              <p className='font-light'>Hotline</p>
+              <p className='font-bold'>Mạng xã hội</p>
+            </div>
+          </div>
+          {/* logo */}
+          <div>
+            <Image src={Logo} alt="logo" width={150} height={130} />
+          </div>
+        </div>
+      </BackgroundImage>
+    </>
   )
 }

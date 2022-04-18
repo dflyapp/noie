@@ -27,7 +27,7 @@ const Register = styled.a`
 
 const Wrapper = styled.header`
   &.is-scrolled {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.9);
   }
 `
 
@@ -44,10 +44,10 @@ export default function Header() {
     window.addEventListener('scroll', listenScrollEvent)
   }, [])
   return (
-    <Wrapper className={`z-90 fixed top-0 w-full left-0 pt-4 pb-8 z-10 px-2 flex justify-between items-center ${scrolled && 'is-scrolled'}`}>
+    <Wrapper className={`z-90 fixed top-0 w-full left-0 z-10 px-2 flex justify-between items-center ${scrolled ? 'is-scrolled py-2' : 'pt-4 pb-8 '}`}>
       <div className='ml-2 lg:ml-12'>
         <a className='text-white cursor-pointer'>
-          <img src={Logo.src} width="120"/>
+          <img src={Logo.src} className={scrolled ? 'w-12' : 'w-24'} />
         </a>
       </div>
       <div>

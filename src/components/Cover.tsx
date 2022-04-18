@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+import { useRef } from 'react'
 
 import HomeBg from '../assets/home_bg.jpg'
 import BigN from '../assets/logo-n.webp'
@@ -17,6 +18,8 @@ import Detail5a from 'assets/Detail5a.webp'
 import DetailAbout2 from 'assets/DetailAbout2.webp'
 import DetailAbout3 from 'assets/DetailAbout3.webp'
 
+import { useOnScreen } from 'hooks/useOnScreen'
+
 const CoverWrapper = styled.section`
   background-image: url(${HomeBg.src});
 `
@@ -30,6 +33,21 @@ const Features = styled.ul`
 `
 
 export default function Cover() {
+  const ref1a = useRef(null)
+  const isVisible1a = useOnScreen(ref1a)
+
+  const ref2a = useRef(null)
+  const isVisible2a = useOnScreen(ref2a)
+
+  const ref3a = useRef(null)
+  const isVisible3a = useOnScreen(ref3a)
+
+  const ref4a = useRef(null)
+  const isVisible4a = useOnScreen(ref4a)
+
+  const ref5a = useRef(null)
+  const isVisible5a = useOnScreen(ref5a)
+
   return (
     <>
       <CoverWrapper className="h-screen w-screen relative bg-gray-200">
@@ -106,28 +124,82 @@ export default function Cover() {
               <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
               <Features>
                 <li className="relative">
-                  <img
-                    src={HL.src}
-                    className="absolute right-0 z-20 hidden lg:block"
-                    style={{ height: '24px', right: '-100px' }}
-                  />
+                  {isVisible1a && (
+                    <img
+                      src={HL.src}
+                      className="absolute right-0 z-20 hidden lg:block"
+                      style={{ height: '24px', right: '-40px' }}
+                    />
+                  )}
                   <span className="relative z-30">Thiết kế kiến trúc +</span>
                 </li>
-                <li className="relative">Thiết kế nội thất +</li>
-                <li>Thi công phần thô +</li>
-                <li>Thi công phần hoàn thiện +</li>
+                <li className="relative">
+                  {isVisible2a && (
+                    <img
+                      src={HL.src}
+                      className="absolute right-0 z-20 hidden lg:block"
+                      style={{ height: '24px', right: '-40px' }}
+                    />
+                  )}
+                  <span className="relative z-30">Thiết kế nội thất +</span>
+                </li>
+                <li className="relative">
+                  {isVisible3a && (
+                    <img
+                      src={HL.src}
+                      className="absolute right-0 z-20 hidden lg:block"
+                      style={{ height: '24px', right: '-40px' }}
+                    />
+                  )}
+                  <span className="relative z-30">Thi công phần thô +</span>
+                </li>
+                <li className="relative">
+                  {isVisible4a && (
+                    <img
+                      src={HL.src}
+                      className="absolute right-0 z-20 hidden lg:block"
+                      style={{ height: '24px', right: '-40px' }}
+                    />
+                  )}
+                  <span className="relative z-30">
+                    Thi công phần hoàn thiện +
+                  </span>
+                </li>
+                <li className="relative">
+                  {' '}
+                  {isVisible5a && (
+                    <img
+                      src={HL.src}
+                      className="absolute right-0 z-20 hidden lg:block"
+                      style={{ height: '24px', right: '-40px' }}
+                    />
+                  )}
+                  <span className="relative z-30">
+                    Thi công phần phần nội thất +
+                  </span>
+                </li>
               </Features>
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2">
-          <img className="mt-12" src={Detail1a.src} />
-          <img className="mt-12" src={Detail2a.src} />
+        <div className="w-full lg:w-1/2 relative z-10">
+          <div ref={ref1a}>
+            <Image className="mt-12" src={Detail1a} alt="1a" />
+          </div>
+          <div ref={ref2a}>
+            <Image className="mt-12" src={Detail2a} alt="2a" />
+          </div>
           <img className="mt-12" src={Detail2b.src} />
-          <img className="mt-12" src={Detail3a.src} />
+          <div ref={ref3a}>
+            <Image className="mt-12" src={Detail3a} alt="3a" />
+          </div>
           <img className="mt-12" src={Detail3b.src} />
-          <img className="mt-12" src={Detail4a.src} />
-          <img className="mt-12" src={Detail5a.src} />
+          <div ref={ref4a}>
+            <Image className="mt-12" src={Detail4a} alt="4a" />
+          </div>
+          <div ref={ref5a}>
+            <Image className="mt-12" src={Detail5a} alt="5a" />
+          </div>
         </div>
       </section>
     </>

@@ -193,7 +193,7 @@ export default function Cover() {
           <div ref={ref3a}>
             <img className="mt-12 w-full" src={Detail3a.src} alt="3a" />
           </div>
-          <img className="mt-12 w-full" src={Detail3b.src.src} />
+          <img className="mt-12 w-full" src={Detail3b.src} />
           <div ref={ref4a}>
             <img className="mt-12 w-full" src={Detail4a.src} alt="4a" />
           </div>

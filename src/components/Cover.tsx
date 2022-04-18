@@ -69,16 +69,16 @@ export default function Cover() {
       </CoverWrapper>
 
       {/* about 1 */}
-      <section className="flex flex-wrap items-start">
+      <section className="flex flex-wrap-reverse lg:flex-wrap items-start">
         <div className="w-full lg:w-1/2">
-          <div className="p-2 lg:p-48 bg-gray-300 flex justify-center items-center">
+          <div className="p-2 lg:p-48 bg-gray-300 flex justify-center items-center mt-12 lg:mt-0">
             <Image src={Logo} alt="logo" />
           </div>
-          <img className="mt-12 w-full" src={DetailAbout2.src} />
-          <img className="mt-12 w-full" src={DetailAbout3.src} />
+          <img className="mt-12 w-full hidden lg:block" src={DetailAbout2.src} />
+          <img className="mt-12 w-full hidden lg:block" src={DetailAbout3.src} />
         </div>
 
-        <div className="w-full lg:w-1/2 px-4 flex items-center sticky top-24 pt-24">
+        <div className="w-full lg:w-1/2 px-4 flex items-center lg:sticky top-24 pt-24">
           <div className="px-2 lg:px-12">
             <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
             <div className="font-light">
@@ -106,7 +106,7 @@ export default function Cover() {
 
       {/* 1a */}
       <section className="flex flex-wrap items-start">
-        <div className="w-full lg:w-1/2 px-4 flex items-center sticky top-24 pt-24">
+        <div className="mt-12 lg:mt-0 w-full lg:w-1/2 px-4 flex items-center lg:sticky top-24 pt-0 lg:pt-24">
           <div className="px-2 lg:px-12 text-right">
             <strong className="uppercase">Dịch vụ</strong>
             <h2 className="mt-3 uppercase text-brown text-bold">
@@ -123,41 +123,41 @@ export default function Cover() {
               </div>
               <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
               <Features>
-                <li className="relative">
+                <li className="relative z-0">
                   {isVisible1a && (
                     <img
                       src={HL.src}
-                      className="absolute right-0 z-20 hidden lg:block"
+                      className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thiết kế kiến trúc +</span>
                 </li>
-                <li className="relative">
+                <li className="relative z-0">
                   {isVisible2a && (
                     <img
                       src={HL.src}
-                      className="absolute right-0 z-20 hidden lg:block"
+                      className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thiết kế nội thất +</span>
                 </li>
-                <li className="relative">
+                <li className="relative z-0">
                   {isVisible3a && (
                     <img
                       src={HL.src}
-                      className="absolute right-0 z-20 hidden lg:block"
+                      className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thi công phần thô +</span>
                 </li>
-                <li className="relative">
+                <li className="relative z-0">
                   {isVisible4a && (
                     <img
                       src={HL.src}
-                      className="absolute right-0 z-20 hidden lg:block"
+                      className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
                     />
                   )}
@@ -165,12 +165,12 @@ export default function Cover() {
                     Thi công phần hoàn thiện +
                   </span>
                 </li>
-                <li className="relative">
+                <li className="relative z-0">
                   {' '}
                   {isVisible5a && (
                     <img
                       src={HL.src}
-                      className="absolute right-0 z-20 hidden lg:block"
+                      className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
                     />
                   )}
@@ -182,23 +182,23 @@ export default function Cover() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 relative z-10">
+        <div className="w-full lg:w-1/2">
           <div ref={ref1a}>
-            <Image className="mt-12" src={Detail1a} alt="1a" />
+            <img className="mt-12 w-full" src={Detail1a.src} alt="1a" />
           </div>
           <div ref={ref2a}>
-            <Image className="mt-12" src={Detail2a} alt="2a" />
+            <img className="mt-12 w-full" src={Detail2a.src} alt="2a" />
           </div>
-          <img className="mt-12" src={Detail2b.src} />
+          <img className="mt-12 w-full" src={Detail2b.src} />
           <div ref={ref3a}>
-            <Image className="mt-12" src={Detail3a} alt="3a" />
+            <img className="mt-12 w-full" src={Detail3a.src} alt="3a" />
           </div>
-          <img className="mt-12" src={Detail3b.src} />
+          <img className="mt-12 w-full" src={Detail3b.src.src} />
           <div ref={ref4a}>
-            <Image className="mt-12" src={Detail4a} alt="4a" />
+            <img className="mt-12 w-full" src={Detail4a.src} alt="4a" />
           </div>
           <div ref={ref5a}>
-            <Image className="mt-12" src={Detail5a} alt="5a" />
+            <img className="mt-12 w-full" src={Detail5a.src} alt="5a" />
           </div>
         </div>
       </section>

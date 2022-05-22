@@ -10,5 +10,5 @@ export default function About() {
     if (error) return <div>Failed to load user</div>
     if (!data) return <div>Loading...</div>
 
-    return <div>{data.name}</div>
+    return <div>{data[0].task}</div>
 }

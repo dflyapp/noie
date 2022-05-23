@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "images" (
-    "id" INT8 NOT NULL DEFAULT unique_rowid(),
+    "id" STRING NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "name" STRING,
 

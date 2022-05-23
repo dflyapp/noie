@@ -26,7 +26,7 @@ export default function About() {
 
     if (upload.ok) {
       console.log('Uploaded successfully!')
-      const result = await fetch('/api/images', {
+      const result = await fetch('/api/upload-images', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached

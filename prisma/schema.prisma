@@ -14,7 +14,7 @@ model todo {
 }
 
 model images {
-  id        BigInt   @id @default(autoincrement())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   name      String?
 }

@@ -11,7 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Response>
 ) {
-  const imageId = req.query.id
+  const imageId = req.query.id.toString()
 
   if (req.method === 'DELETE') {
     const result = await prisma.images.delete({

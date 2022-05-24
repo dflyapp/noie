@@ -18,3 +18,8 @@ model images {
   createdAt DateTime @default(now())
   name      String?
 }
+
+model animal {
+  id        String   @id
+  name      String
+}

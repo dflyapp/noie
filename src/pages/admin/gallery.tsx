@@ -1,12 +1,16 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import axios from 'axios'
-import useSwr from 'swr'
+import useSwr, { useSWRConfig } from 'swr'
 import { v4 as uuidv4 } from 'uuid'
+import Image from 'next/image'
+import toast, { Toaster } from 'react-hot-toast'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Gallery() {
   const { data, error } = useSwr('/api/images', fetcher)
+  const { mutate } = useSWRConfig()
   // s3 upload
   const uploadPhoto = async (e: any) => {
     const file = e.target.files[0]
@@ -39,9 +43,12 @@ export default function Gallery() {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify({ id: uuidv4(), name: filename }),
       })
-      console.log('Uploaded successfully!', result)
+
+      mutate('/api/images')
+      toast.success('Uploaded successfully!')
     } else {
       console.error('Upload failed.')
+      toast.error('Upload failed.')
     }
   }
 
@@ -50,6 +57,11 @@ export default function Gallery() {
 
   return (
     <article className="container mx-auto py-24">
+      <Head>
+        <title>Admin - Gallery</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Toaster />
       <Link href="/admin">
         <span className="text-left cursor-pointer block">Admin</span>
       </Link>
@@ -66,9 +78,31 @@ export default function Gallery() {
         {data.length > 0 &&
           data.map((image: any) => {
             return (
-              <section key={image.id} className='w-1/4 p-2'>
-                <img src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`} alt="image" />
-                <p className='py-1'>{image.name}</p>
+              <section key={image.id} className="w-1/4 p-2 mb-4">
+                <div className='border p-2'>
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`}
+                    alt="image"
+                    layout="responsive"
+                    width={400}
+                    height={400}
+                  />
+                  <p className="py-1">{image.name}</p>
+                  <button
+                    className="text-xs border bg-gray-200 px-2 py-1 rounded-md hover:opacity-50"
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        `${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`
+                      )
+                      toast.success('URL is copied!')
+                    }}
+                  >
+                    copy
+                  </button>
+                  <button className="text-xs bg-red-600 text-white px-2 py-1 ml-2 rounded-md hover:opacity-90">
+                    delete
+                  </button>
+                </div>
               </section>
             )
           })}

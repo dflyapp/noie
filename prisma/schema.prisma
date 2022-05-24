@@ -14,7 +14,7 @@ model todo {
 }
 
 model images {
-  id        String   @id @default(uuid())
+  id        String   @id @default("gen_random_uuid()")
   createdAt DateTime @default(now())
   name      String?
 }

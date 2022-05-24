@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function About() {
-  const { data, error } = useSwr('/api/user', fetcher)
+  const { data, error } = useSwr('/api/todo', fetcher)
 
   // s3 upload
   const uploadPhoto = async (e: any) => {

@@ -30,7 +30,7 @@ export default function Gallery() {
     })
 
     if (upload.ok) {
-      const result = await fetch('/api/upload-images', {
+      const result = await fetch('/api/image-upload', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -79,7 +79,7 @@ export default function Gallery() {
           data.map((image: any) => {
             return (
               <section key={image.id} className="w-1/4 p-2 mb-4">
-                <div className='border p-2'>
+                <div className="border p-2">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`}
                     alt="image"
@@ -99,7 +99,14 @@ export default function Gallery() {
                   >
                     copy
                   </button>
-                  <button className="text-xs bg-red-600 text-white px-2 py-1 ml-2 rounded-md hover:opacity-90">
+                  <button
+                    onClick={async () => {
+                      await axios.delete(`/api/image/${image.id}`)
+                      mutate('/api/images')
+                      toast.success('Image deleted!')
+                    }}
+                    className="text-xs bg-red-600 text-white px-2 py-1 ml-2 rounded-md hover:opacity-90"
+                  >
                     delete
                   </button>
                 </div>

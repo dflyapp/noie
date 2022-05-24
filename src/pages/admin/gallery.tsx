@@ -66,7 +66,7 @@ export default function Gallery() {
         {data.length > 0 &&
           data.map((image: any) => {
             return (
-              <section className='w-1/4 p-2'>
+              <section key={image.id} className='w-1/4 p-2'>
                 <img src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`} alt="image" />
                 <p className='py-1'>{image.name}</p>
               </section>

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "images" ALTER COLUMN "id" DROP DEFAULT;

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.ytimg.com'],
+    domains: ['i.ytimg.com', 'freedb-s3.s3.ap-southeast-1.amazonaws.com'],
   },
 }
 

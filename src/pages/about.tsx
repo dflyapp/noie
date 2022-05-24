@@ -1,5 +1,6 @@
 import useSwr from 'swr'
 import Image from 'next/image'
+import { v4 as uuidv4 } from 'uuid'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -37,7 +38,7 @@ export default function About() {
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer',
-        body: JSON.stringify({ name: filename }),
+        body: JSON.stringify({ id: uuidv4(), name: filename }),
       })
       console.log(result)
     } else {

@@ -1,63 +1,53 @@
 import useSwr from 'swr'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
+import axios from 'axios'
+import { useState, useRef } from 'react'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function About() {
   const { data, error } = useSwr('/api/todo', fetcher)
+  const [file, setFile] = useState<any>()
+  const ref = useRef<HTMLInputElement>(null)
 
-  // s3 upload
-  const uploadPhoto = async (e: any) => {
-    const file = e.target.files[0]
-    const filename = encodeURIComponent(file.name)
-    const res = await fetch(`/api/upload-url?file=${filename}`)
-    const { url, fields } = await res.json()
-    const formData = new FormData()
+  const selectFile = (e: any) => {
+    setFile(e.target.files[0])
+  }
 
-    Object.keys(fields).forEach((key) => {
-      formData.append(key, fields[key])
-    })
-    formData.append('file', file)
-
-    const upload = await fetch(url, {
-      method: 'POST',
-      body: formData,
+  const uploadFile = async () => {
+    let { data } = await axios.post('/api/image', {
+      name: file.name,
+      type: file.type,
     })
 
-    if (upload.ok) {
-      console.log('Uploaded successfully!')
-      const result = await fetch('/api/image-upload', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify({ id: uuidv4(), name: filename }),
-      })
-      console.log(result)
-    } else {
-      console.error('Upload failed.')
-    }
+    console.log(data)
+
+    const url = data.url
+    await axios.put(url, file, {
+      headers: {
+        'Content-type': file.type,
+        'Access-Control-Allow-Origin': '*',
+      },
+    })
+    console.log(ref)
+    ref.current ? ref.current.value = '' : ''
+
+    setFile(null)
   }
 
   if (error) return <div>Failed to load user</div>
   if (!data) return <div>Loading...</div>
 
   return (
-    <>
+    <article className="container mx-auto py-24">
       <div>{data[0].task}</div>
-      <p>Upload a .png or .jpg image (max 1MB).</p>
-      <input
-        onChange={uploadPhoto}
-        type="file"
-        accept="image/png, image/jpeg"
-      />
+      <p>Please select a file to upload</p>
+      <input ref={ref} type="file" onChange={(e) => selectFile(e)} />
+      <button
+        onClick={uploadFile}
+        className="bg-red-500 text-white p-2 rounded-sm shadow-md hover:bg-red-700 transition-all"
+      >upload</button>
       <p>image goes here </p>
       <img
         style={{ width: '500px' }}
@@ -69,6 +59,6 @@ export default function About() {
         width={600}
         height={400}
       />
-    </>
+    </article>
   )
 }

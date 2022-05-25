@@ -30,18 +30,9 @@ export default function Gallery() {
     })
 
     if (upload.ok) {
-      const result = await fetch('/api/image-upload', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify({ id: uuidv4(), name: filename }),
+      axios.post('/api/image-upload', {
+        id: uuidv4(),
+        name: filename,
       })
 
       mutate('/api/images')

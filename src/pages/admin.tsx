@@ -7,10 +7,10 @@ export default function Admin() {
       <div className='flex justify-center mt-12'>
         <div className="flex items-center">
           <Link href="/admin/gallery">
-            <a className="text-lg border mx-12 p-4 hover:opacity-50">Gallery</a>
+            <a className="text-lg text-red-700 underline mx-12 p-4 hover:opacity-50">Gallery</a>
           </Link>
           <Link href="/admin/blogs">
-            <a className="text-lg border mx-12 p-4 hover:opacity-50">Blogs</a>
+            <a className="text-lg text-red-700 underline mx-12 p-4 hover:opacity-50">Blogs</a>
           </Link>
         </div>
       </div>

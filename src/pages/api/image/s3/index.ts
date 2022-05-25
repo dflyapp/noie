@@ -9,6 +9,7 @@ type Response = {
 
 // ref: https://docs.digitalocean.com/products/spaces/resources/s3-sdk-examples/
 // ref: https://betterprogramming.pub/how-to-upload-files-to-amazon-s3-from-nextjs-app-b7ef1909976b
+// example: https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/s3/src
 
 const s3 = new S3({
   accessKeyId: process.env.ACCESS_KEY,

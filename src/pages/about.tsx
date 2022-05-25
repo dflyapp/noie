@@ -16,23 +16,12 @@ export default function About() {
   }
 
   const uploadFile = async () => {
-    let { data } = await axios.post('/api/image', {
+    let { data } = await axios.post('/api/image/s3', {
       name: file.name,
       type: file.type,
     })
-
-    console.log(data)
-
-    const url = data.url
-    await axios.put(url, file, {
-      headers: {
-        'Content-type': file.type,
-        'Access-Control-Allow-Origin': '*',
-      },
-    })
-    console.log(ref)
+    await axios.put(data.url, file)
     ref.current ? ref.current.value = '' : ''
-
     setFile(null)
   }
 

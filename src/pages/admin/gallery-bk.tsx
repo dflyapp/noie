@@ -5,42 +5,42 @@ import useSwr, { useSWRConfig } from 'swr'
 import { v4 as uuidv4 } from 'uuid'
 import Image from 'next/image'
 import toast, { Toaster } from 'react-hot-toast'
-import { useRef, useState } from 'react'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Gallery() {
-  const [file, setFile] = useState<any>()
-  const ref = useRef<HTMLInputElement>(null)
   const { data, error } = useSwr('/api/image/postgres', fetcher)
   const { mutate } = useSWRConfig()
-
-  const selectFile = (e: any) => {
-    setFile(e.target.files[0])
-  }
-
   // s3 upload
   const uploadPhoto = async (e: any) => {
-    // step 1: get url and authen info (S3)
-    const { data } = await axios.post('/api/image/s3', {
-      name: file.name,
-      type: file.type,
+    const file = e.target.files[0]
+    const filename = encodeURIComponent(file.name)
+    const res = await fetch(`/api/upload-url?file=${filename}`)
+    const { url, fields } = await res.json()
+    const formData = new FormData()
+
+    Object.keys(fields).forEach((key) => {
+      formData.append(key, fields[key])
+    })
+    formData.append('file', file)
+
+    const upload = await fetch(url, {
+      method: 'POST',
+      body: formData,
     })
 
-    // step 2: put file data to remote url (S3)
-    await axios.put(data.url, file)
+    if (upload.ok) {
+      axios.post('/api/image-upload', {
+        id: uuidv4(),
+        name: filename,
+      })
 
-    // step 3: save file to database (Postgres)
-    await axios.post('/api/image/postgres', {
-      id: uuidv4(),
-      name: file.name
-    })
-
-    // UI for better experience
-    ref.current ? (ref.current.value = '') : ''
-    toast.success('Image uploaded!')
-    mutate('/api/image/postgres')
-    setFile(null)
+      mutate('/api/image/postgres')
+      toast.success('Uploaded successfully!')
+    } else {
+      console.error('Upload failed.')
+      toast.error('Upload failed.')
+    }
   }
 
   if (error) return <div>Failed to load images</div>
@@ -57,13 +57,12 @@ export default function Gallery() {
         <span className="text-left cursor-pointer block">Admin</span>
       </Link>
 
-      <input ref={ref} type="file" onChange={(e) => selectFile(e)} />
-      <button
-        onClick={uploadPhoto}
-        className="bg-red-500 text-white p-2 rounded-sm shadow-md hover:bg-red-700 transition-all"
-      >
-        upload
-      </button>
+      <input
+        className="mt-12"
+        onChange={uploadPhoto}
+        type="file"
+        accept="image/png, image/jpeg"
+      />
 
       <h1>Gallery</h1>
       <div className="flex flex-wrap">
@@ -93,7 +92,7 @@ export default function Gallery() {
                   </button>
                   <button
                     onClick={async () => {
-                      await axios.delete(`/api/image/postgres/${image.id}`)
+                      await axios.delete(`/api/image/s3/${image.id}`)
                       mutate('/api/image/postgres')
                       toast.success('Image deleted!')
                     }}

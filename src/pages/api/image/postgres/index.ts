@@ -9,7 +9,7 @@ type Data = {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<Data[] | Data>
 ) {
   if (req.method === 'GET') {
     const result = await prisma.images.findMany()

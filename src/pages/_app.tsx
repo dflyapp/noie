@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
+import { SessionProvider } from 'next-auth/react'
 
 import 'styles/global.css'
 import { LoadingContext } from 'context/loading'
@@ -18,11 +19,11 @@ const LoadingWrapper = styled.section`
   justify-content: center;
 `
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [loading, setLoading] = useState<boolean>(false)
 
   return (
-    <>
+    <SessionProvider session={session}>
       <LoadingContext.Provider value={{ loading, setLoading }}>
         <Component {...pageProps} />
         {loading && (
@@ -31,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </LoadingWrapper>
         )}
       </LoadingContext.Provider>
-    </>
+    </SessionProvider>
   )
 }
 

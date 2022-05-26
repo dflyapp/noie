@@ -19,7 +19,16 @@ model images {
   name      String?
 }
 
+model blogs {
+  id          String   @id
+  createdAt   DateTime @default(now())
+  title       String
+  slug        String
+  description String
+  content     Json
+}
+
 model animal {
-  id        String   @id
-  name      String
+  id   String @id
+  name String
 }

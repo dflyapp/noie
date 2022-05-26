@@ -3,6 +3,7 @@ import Link from 'next/link'
 import useSwr from 'swr'
 import { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
+import { useSession } from "next-auth/react"
 
 // slate
 import { createEditor } from 'slate'
@@ -13,6 +14,7 @@ import axios from 'axios'
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Blogs() {
+  const { data: session } = useSession()
   const router = useRouter()
   // const { data, error } = useSwr(`/api/blogs/${router.query.id}`, fetcher)
   const id = router.query.id
@@ -40,6 +42,8 @@ export default function Blogs() {
 
   if (error) return <div>Failed to load blog</div>
   if (!data) return <div>Loading...</div>
+  if (session && !session.isAdmin) return <div>not admin...</div>
+
   return (
     <article className="container mx-auto py-12">
       <Head>

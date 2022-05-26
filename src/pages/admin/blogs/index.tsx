@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Toaster } from 'react-hot-toast'
 import useSwr from 'swr'
+import { useSession } from 'next-auth/react'
 
 type Blog = {
   id: string
@@ -14,9 +15,12 @@ type Blog = {
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Blogs() {
+  const { data: session } = useSession()
   const { data, error } = useSwr('/api/blogs', fetcher)
   if (error) return <div>Failed to load blogs</div>
   if (!data) return <div>Loading...</div>
+  if (session && !session.isAdmin) return <div>not admin...</div>
+
   return (
     <article className="container mx-auto py-12">
       <Head>
@@ -44,7 +48,9 @@ export default function Blogs() {
             return (
               <section key={blog.id} className="flex justify-between">
                 <Link href={`/admin/blogs/${blog.id}`}>
-                  <h2 className='hover:underline cursor-pointer'>{blog.title}</h2>
+                  <h2 className="hover:underline cursor-pointer">
+                    {blog.title}
+                  </h2>
                 </Link>
 
                 <Link href={`/admin/blogs/${blog.id}`}>

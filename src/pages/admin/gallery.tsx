@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid'
 import Image from 'next/image'
 import toast, { Toaster } from 'react-hot-toast'
 import { useRef, useState, useContext } from 'react'
+import { useSession } from "next-auth/react"
 
 import { LoadingContext } from 'context/loading'
 
@@ -17,6 +18,7 @@ export default function Gallery() {
   const { data, error } = useSwr('/api/image/postgres', fetcher)
   const { mutate } = useSWRConfig()
   const Loading = useContext(LoadingContext)
+  const { data: session } = useSession()
 
   const selectFile = (e: any) => {
     setFile(e.target.files[0])
@@ -60,6 +62,7 @@ export default function Gallery() {
 
   if (error) return <div>Failed to load images</div>
   if (!data) return <div>Loading...</div>
+  if (session && !session.isAdmin) return <div>not admin...</div>
 
   return (
     <article className="container mx-auto py-12">

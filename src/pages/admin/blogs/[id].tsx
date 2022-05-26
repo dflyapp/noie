@@ -23,20 +23,20 @@ export default function Blogs() {
 
   // slate
   const editor = useMemo(() => withReact(createEditor()), [])
-  const renderElement = useCallback(({ attributes, children, element }) => {
-    switch (element.type) {
-      case 'quote':
-        return <blockquote {...attributes}>{children}</blockquote>
-      case 'link':
-        return (
-          <a {...attributes} href={element.url}>
-            {children}
-          </a>
-        )
-      default:
-        return <p {...attributes}>{children}</p>
-    }
-  }, [])
+  // const renderElement = useCallback(({ attributes, children, element }) => {
+  //   switch (element.type) {
+  //     case 'quote':
+  //       return <blockquote {...attributes}>{children}</blockquote>
+  //     case 'link':
+  //       return (
+  //         <a {...attributes} href={element.url}>
+  //           {children}
+  //         </a>
+  //       )
+  //     default:
+  //       return <p {...attributes}>{children}</p>
+  //   }
+  // }, [])
 
   if (error) return <div>Failed to load blog</div>
   if (!data) return <div>Loading...</div>

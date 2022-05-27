@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import styled from 'styled-components'
 import { useRef } from 'react'
@@ -74,8 +75,16 @@ export default function Cover() {
           <div className="p-2 lg:p-48 bg-gray-300 flex justify-center items-center mt-12 lg:mt-0">
             <Image src={Logo} alt="logo" />
           </div>
-          <img className="mt-12 w-full hidden lg:block" src={DetailAbout2.src} />
-          <img className="mt-12 w-full hidden lg:block" src={DetailAbout3.src} />
+          <img
+            alt="dich vu"
+            className="mt-12 w-full hidden lg:block"
+            src={DetailAbout2.src}
+          />
+          <img
+            alt="dich vu"
+            className="mt-12 w-full hidden lg:block"
+            src={DetailAbout3.src}
+          />
         </div>
 
         <div className="w-full lg:w-1/2 px-4 flex items-center lg:sticky top-24 pt-24">
@@ -126,6 +135,7 @@ export default function Cover() {
                 <li className="relative z-0">
                   {isVisible1a && (
                     <img
+                      alt="dich vu"
                       src={HL.src}
                       className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
@@ -136,6 +146,7 @@ export default function Cover() {
                 <li className="relative z-0">
                   {isVisible2a && (
                     <img
+                      alt="dich vu thiet ke kien truc"
                       src={HL.src}
                       className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
@@ -146,6 +157,7 @@ export default function Cover() {
                 <li className="relative z-0">
                   {isVisible3a && (
                     <img
+                      alt="dich vu thiet ke noi that"
                       src={HL.src}
                       className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
@@ -156,6 +168,7 @@ export default function Cover() {
                 <li className="relative z-0">
                   {isVisible4a && (
                     <img
+                      alt="dich vu thi cong phan tho"
                       src={HL.src}
                       className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
@@ -169,6 +182,7 @@ export default function Cover() {
                   {' '}
                   {isVisible5a && (
                     <img
+                      alt="dich vu thi cong hoan thien"
                       src={HL.src}
                       className="absolute right-0 z-20"
                       style={{ height: '24px', right: '-40px' }}
@@ -189,11 +203,11 @@ export default function Cover() {
           <div ref={ref2a}>
             <img className="mt-12 w-full" src={Detail2a.src} alt="2a" />
           </div>
-          <img className="mt-12 w-full" src={Detail2b.src} />
+          <img alt="dich vu" className="mt-12 w-full" src={Detail2b.src} />
           <div ref={ref3a}>
             <img className="mt-12 w-full" src={Detail3a.src} alt="3a" />
           </div>
-          <img className="mt-12 w-full" src={Detail3b.src} />
+          <img alt="dich vu" className="mt-12 w-full" src={Detail3b.src} />
           <div ref={ref4a}>
             <img className="mt-12 w-full" src={Detail4a.src} alt="4a" />
           </div>

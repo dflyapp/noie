@@ -38,7 +38,7 @@ export default function CreateBlog() {
     {
       type: 'paragraph',
       children: [
-        { text: 'This is editable plain text, just like a <textarea>!' },
+        { text: 'This is editable plain text' },
       ],
     },
   ]
@@ -51,6 +51,8 @@ export default function CreateBlog() {
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    data.id = uuidv4()
+    data.content = editorContent
     axios.post('/api/blogs', data).then(() => {
       router.push('/admin/blogs')
     })

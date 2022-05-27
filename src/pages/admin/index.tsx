@@ -5,6 +5,7 @@ import { useEffect, useContext } from 'react'
 import axios from 'axios'
 
 import { UserContext } from 'context/user'
+import IsAdmin from 'layouts/IsAdmin'
 
 export default function Admin() {
   const { data: session } = useSession()
@@ -19,7 +20,7 @@ export default function Admin() {
         userContext?.setUser(res.data)
       })
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userEmail])
 
   return (
@@ -29,56 +30,33 @@ export default function Admin() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <article className="container mx-auto">
-        <h1 className="text-left">Admin Page</h1>
-        {session ? (
-          session?.isAdmin ? (
-            <>
-              <p>Hello {session?.user?.name}</p>
-              <p>Signed in as {userEmail} </p>
-              <br />
-              <button
-                className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
-                onClick={() => signOut()}
-              >
-                Sign out
-              </button>
-              <div className="mt-8">
-                <Link passHref href="/admin/gallery">
-                  <a className="block text-lg text-red-500 underline hover:opacity-80">
-                    1. Gallery
-                  </a>
-                </Link>
-                <Link passHref href="/admin/blogs">
-                  <a className="mt-4 block text-lg text-red-500 underline hover:opacity-80">
-                    2. Blogs
-                  </a>
-                </Link>
-              </div>
-            </>
-          ) : (
-            <>
-              <p>You are not admin user</p>
-              <button
-                className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
-                onClick={() => signOut()}
-              >
-                Sign out
-              </button>
-            </>
-          )
-        ) : (
-          <>
-            Not signed in <br />
+      <IsAdmin>
+        <article className="container mx-auto px-2 sm:px-0">
+          <h1 className="text-left">Admin Page</h1>
+          <p>Hello {session?.user?.name}!</p>
+          <div className='flex items-center'>
+            <p>Signed in as {userEmail} </p>
             <button
-              className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
-              onClick={() => signIn()}
+              className="text-sm bg-white text-red-500 rounded-md px-2 py-1 hover:opacity-80"
+              onClick={() => signOut()}
             >
-              Sign in
+              (Sign out)
             </button>
-          </>
-        )}
-      </article>
+          </div>
+          <div className="mt-8">
+            <Link passHref href="/admin/gallery">
+              <a className="block text-lg text-red-500 underline hover:opacity-80">
+                1. Gallery
+              </a>
+            </Link>
+            <Link passHref href="/admin/blogs">
+              <a className="mt-4 block text-lg text-red-500 underline hover:opacity-80">
+                2. Blogs
+              </a>
+            </Link>
+          </div>
+        </article>
+      </IsAdmin>
     </article>
   )
 }

@@ -61,7 +61,7 @@ export default function CreateBlog() {
   console.log(watch('title')) // watch input value by passing the name of it
   return (
     <IsAdmin>
-      <article className="container mx-auto py-12">
+      <article className="container mx-auto py-12 px-2 sm:px-0">
         <Head>
           <title>Admin - Blogs</title>
           <meta

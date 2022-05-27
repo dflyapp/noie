@@ -20,3 +20,6 @@ export default NextAuth({
     },
   },
 })
+
+// in case we need middleware to check cookie
+// https://stackoverflow.com/questions/51426252/nextjs-route-middleware-for-authentication

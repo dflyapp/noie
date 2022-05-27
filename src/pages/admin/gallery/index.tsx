@@ -63,7 +63,7 @@ export default function Gallery() {
 
   return (
     <IsAdmin>
-      <article className="container mx-auto py-12">
+      <article className="container mx-auto py-12 px-2 md:px-0">
         <Head>
           <title>Admin - Gallery</title>
           <meta
@@ -94,7 +94,7 @@ export default function Gallery() {
           {data.length > 0 &&
             data.map((image: any) => {
               return (
-                <section key={image.id} className="w-1/4 py-2 mb-4">
+                <section key={image.id} className="w-full sm:w-1/2 md:w-1/4 py-2 mb-4">
                   <div className="border p-2">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`}

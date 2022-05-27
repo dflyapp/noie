@@ -9,7 +9,7 @@ export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
         session?.isAdmin ? (
           <>{children}</>
         ) : (
-          <div className='container mx-auto py-24'>
+          <div className='container mx-auto py-24 px-2 md:px-0'>
             <p>You are not admin user, {session?.user?.name}</p>
             <button
               className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
@@ -20,7 +20,7 @@ export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
           </div>
         )
       ) : (
-        <div className='container mx-auto py-24'>
+        <div className='container mx-auto py-24 px-2 md:px-0'>
           Not signed in <br />
           <button
             className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"

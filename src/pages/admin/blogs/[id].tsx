@@ -54,12 +54,12 @@ export default function Blogs() {
         </Head>
         <Toaster />
         <nav className="flex">
-          <Link href="/admin">
+          <Link passHref href="/admin">
             <span className="text-left cursor-pointer block underline text-red-500">
               Admin
             </span>
           </Link>
-          <Link href="/admin/blogs">
+          <Link passHref href="/admin/blogs">
             <span className="ml-4 text-left cursor-pointer block underline text-red-500">
               Blogs
             </span>

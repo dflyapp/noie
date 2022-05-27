@@ -32,12 +32,12 @@ export default function Blogs() {
         </Head>
         <Toaster />
         <nav className="flex">
-          <Link href="/admin">
+          <Link passHref href="/admin">
             <span className="text-left cursor-pointer block underline text-red-500">
               Admin
             </span>
           </Link>
-          <Link href="/admin/blogs/create">
+          <Link passHref href="/admin/blogs/create">
             <span className="ml-4 text-left cursor-pointer block underline text-red-500">
               Create new blog
             </span>
@@ -50,13 +50,13 @@ export default function Blogs() {
             data.map((blog: Blog) => {
               return (
                 <section key={blog.id} className="flex justify-between items-center">
-                  <Link href={`/admin/blogs/${blog.id}`}>
+                  <Link passHref href={`/admin/blogs/${blog.id}`}>
                     <h3 className="hover:underline cursor-pointer">
                       {blog.title}
                     </h3>
                   </Link>
 
-                  <Link href={`/admin/blogs/${blog.id}`}>
+                  <Link passHref href={`/admin/blogs/${blog.id}`}>
                     <a className="underline text-red-500">visit</a>
                   </Link>
                 </section>

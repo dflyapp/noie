@@ -15,6 +15,7 @@ export default NextAuth({
   ],
   callbacks: {
     async session({ session, token, user }) {
+      console.log('callbacks are called...')
       session.isAdmin = user.isAdmin
       return session
     },

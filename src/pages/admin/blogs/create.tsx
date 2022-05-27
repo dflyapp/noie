@@ -51,8 +51,6 @@ export default function CreateBlog() {
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    ;(data.id = uuidv4()), (data.content = editorContent)
-    console.log(data)
     axios.post('/api/blogs', data).then(() => {
       router.push('/admin/blogs')
     })
@@ -71,12 +69,12 @@ export default function CreateBlog() {
         </Head>
         <Toaster />
         <nav className="flex">
-          <Link href="/admin">
+          <Link passHref href="/admin">
             <span className="text-left cursor-pointer block underline text-red-500">
               Admin
             </span>
           </Link>
-          <Link href="/admin/blogs">
+          <Link passHref href="/admin/blogs">
             <span className="ml-4 text-left cursor-pointer block underline text-red-500">
               Blogs
             </span>
@@ -146,7 +144,6 @@ export default function CreateBlog() {
                     // Save the value to Local Storage.
                     const content = JSON.stringify(value)
                     // localStorage.setItem('content', content)
-                    console.log(content)
                     setEditorContent(value)
                   }
                 }}

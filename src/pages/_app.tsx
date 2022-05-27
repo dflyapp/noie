@@ -4,6 +4,7 @@ import { SessionProvider } from 'next-auth/react'
 
 import 'styles/global.css'
 import { LoadingContext } from 'context/loading'
+import { UserContext } from 'context/user'
 import styled from 'styled-components'
 
 const LoadingWrapper = styled.section`
@@ -21,9 +22,11 @@ const LoadingWrapper = styled.section`
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [loading, setLoading] = useState<boolean>(false)
+  const [user, setUser] = useState<Record<string, unknown> | null>(null)
 
   return (
     <SessionProvider session={session}>
+      <UserContext.Provider value={{ user, setUser }}>
       <LoadingContext.Provider value={{ loading, setLoading }}>
         <Component {...pageProps} />
         {loading && (
@@ -32,6 +35,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           </LoadingWrapper>
         )}
       </LoadingContext.Provider>
+      </UserContext.Provider>
     </SessionProvider>
   )
 }

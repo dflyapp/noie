@@ -29,7 +29,6 @@ export default function Gallery() {
 
   // s3 upload
   const uploadPhoto = async (e: any) => {
-    console.log(file)
     if (file === undefined || file === null) {
       toast.error('Please select a file')
       return
@@ -73,7 +72,7 @@ export default function Gallery() {
           />
         </Head>
         <Toaster />
-        <Link href="/admin">
+        <Link passHref href="/admin">
           <span className="text-left cursor-pointer block underline text-red-500">
             Admin
           </span>

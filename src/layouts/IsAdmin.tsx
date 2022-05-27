@@ -1,4 +1,6 @@
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { useContext } from 'react'
+import { UserContext } from 'context/user'
 
 interface Props {
   children: JSX.Element[] | JSX.Element
@@ -6,11 +8,12 @@ interface Props {
 
 export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
   const { data: session } = useSession()
+  const userContext = useContext(UserContext)
 
   return (
     <>
       {session ? (
-        session?.isAdmin ? (
+        userContext?.user?.isAdmin ? (
           <>{children}</>
         ) : (
           <div className='container mx-auto py-24'>

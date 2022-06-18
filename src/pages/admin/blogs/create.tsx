@@ -2,15 +2,15 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Toaster } from 'react-hot-toast'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { BaseEditor, createEditor, Descendant } from 'slate'
-import { Slate, Editable, withReact, ReactEditor } from 'slate-react'
-import { useMemo, useState } from 'react'
-import { withHistory } from 'slate-history'
+import { BaseEditor, Descendant } from 'slate'
+import { ReactEditor } from 'slate-react'
+import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid'
 
 import IsAdmin from 'layouts/IsAdmin'
+import Editor from 'components/Editor'
 
 declare module 'slate' {
   interface CustomTypes {
@@ -33,14 +33,14 @@ type CustomText = { text: string }
 
 export default function CreateBlog() {
   const router = useRouter()
-  const editor = useMemo(() => withHistory(withReact(createEditor())), [])
+
   const initialValue: Descendant[] = [
     {
       type: 'paragraph',
       children: [{ text: 'This is editable plain text' }],
     },
   ]
-  const [editorContent, setEditorContent] = useState<any>(initialValue)
+  const [editorContent, setEditorContent] = useState<Descendant[]>(initialValue)
 
   const {
     register,
@@ -56,7 +56,6 @@ export default function CreateBlog() {
     })
   }
 
-  console.log(watch('title')) // watch input value by passing the name of it
   return (
     <IsAdmin>
       <article className="container mx-auto py-12 px-2 sm:px-0">
@@ -133,23 +132,10 @@ export default function CreateBlog() {
             {/* content editor */}
             <p className="mt-2">Content</p>
             <div className="border p-2">
-              <Slate
-                editor={editor}
-                value={initialValue}
-                onChange={(value) => {
-                  const isAstChange = editor.operations.some(
-                    (op) => 'set_selection' !== op.type
-                  )
-                  if (isAstChange) {
-                    // Save the value to Local Storage.
-                    const content = JSON.stringify(value)
-                    // localStorage.setItem('content', content)
-                    setEditorContent(value)
-                  }
-                }}
-              >
-                <Editable placeholder="Enter some plain text..." />
-              </Slate>
+              <Editor
+                initialValue={initialValue}
+                setEditorContent={setEditorContent}
+              />
               {errors.content && (
                 <span className="text-light text-sm text-red-500">
                   This field is required

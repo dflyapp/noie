@@ -73,7 +73,7 @@ export default function Gallery() {
         </Head>
         <Toaster />
         <Link passHref href="/admin">
-          <span className="text-left cursor-pointer block underline text-red-500">
+          <span className="block cursor-pointer text-left text-red-500 underline">
             Admin
           </span>
         </Link>
@@ -84,7 +84,7 @@ export default function Gallery() {
           <input ref={ref} type="file" onChange={(e) => selectFile(e)} />
           <button
             onClick={uploadPhoto}
-            className="bg-red-500 text-white py-1 px-2 rounded-sm shadow-md hover:bg-red-800 transition-all"
+            className="rounded-sm bg-red-500 py-1 px-2 text-white shadow-md transition-all hover:bg-red-800"
           >
             upload
           </button>
@@ -94,7 +94,10 @@ export default function Gallery() {
           {data.length > 0 &&
             data.map((image: any) => {
               return (
-                <section key={image.id} className="w-full sm:w-1/2 md:w-1/4 py-2 mb-4">
+                <section
+                  key={image.id}
+                  className="mb-4 w-full py-2 sm:w-1/2 md:w-1/4"
+                >
                   <div className="border p-2">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`}
@@ -105,7 +108,7 @@ export default function Gallery() {
                     />
                     <p className="py-1">{image.name}</p>
                     <button
-                      className="text-xs border bg-gray-200 px-2 py-1 rounded-md hover:opacity-50"
+                      className="rounded-md border bg-gray-200 px-2 py-1 text-xs hover:opacity-50"
                       onClick={() => {
                         navigator.clipboard.writeText(
                           `${process.env.NEXT_PUBLIC_S3_HOST}${image.name}`
@@ -124,7 +127,7 @@ export default function Gallery() {
                         toast.success('Image deleted!')
                         Loading?.setLoading(false)
                       }}
-                      className="text-xs bg-red-600 text-white px-2 py-1 ml-2 rounded-md hover:opacity-90"
+                      className="ml-2 rounded-md bg-red-600 px-2 py-1 text-xs text-white hover:opacity-90"
                     >
                       delete
                     </button>

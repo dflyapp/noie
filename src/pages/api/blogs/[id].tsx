@@ -17,12 +17,12 @@ export default async function handler(
 
   if (req.method === 'GET') {
     const result = await prisma.blogs.findUnique({
-      where: { id: blogId }
+      where: { id: blogId },
     })
     res.json(result)
   } else if (req.method === 'DELETE') {
     const result = await prisma.blogs.delete({
-      where: { id: blogId }
+      where: { id: blogId },
     })
     res.json(result)
   } else {

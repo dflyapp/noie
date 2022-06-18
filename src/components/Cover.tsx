@@ -51,18 +51,18 @@ export default function Cover() {
 
   return (
     <>
-      <CoverWrapper className="h-screen w-screen relative bg-gray-200">
-        <div className="pl-4 lg:pl-48 absolute bottom-16">
-          <h1 className="text-brown text-4xl lg:text-8xl uppercase relative z-0">
+      <CoverWrapper className="relative h-screen w-screen bg-gray-200">
+        <div className="absolute bottom-16 pl-4 lg:pl-48">
+          <h1 className="relative z-0 text-4xl uppercase text-brown lg:text-8xl">
             <img
               src={BigN.src}
               alt="logo"
-              className="hidden lg:block absolute z-10"
+              className="absolute z-10 hidden lg:block"
               style={{ width: '220px', left: '-140px', top: '-130px' }}
             />
             <span className="relative z-20">NOIE Việt Nam</span>
           </h1>
-          <span className="text-white font-light">
+          <span className="font-light text-white">
             Chuyên gia SÁNG TẠO - THIẾT KẾ TRẢI NGHIỆM KHÔNG GIAN và THI CÔNG
             <br /> Thuộc Công ty TNHH Kiến Trúc Xây Dựng NOIE Việt Nam
           </span>
@@ -70,26 +70,26 @@ export default function Cover() {
       </CoverWrapper>
 
       {/* about 1 */}
-      <section className="flex flex-wrap-reverse lg:flex-wrap items-start">
+      <section className="flex flex-wrap-reverse items-start lg:flex-wrap">
         <div className="w-full lg:w-1/2">
-          <div className="p-2 lg:p-48 bg-gray-300 flex justify-center items-center mt-12 lg:mt-0">
+          <div className="mt-12 flex items-center justify-center bg-gray-300 p-2 lg:mt-0 lg:p-48">
             <Image src={Logo} alt="logo" />
           </div>
           <img
             alt="dich vu"
-            className="mt-12 w-full hidden lg:block"
+            className="mt-12 hidden w-full lg:block"
             src={DetailAbout2.src}
           />
           <img
             alt="dich vu"
-            className="mt-12 w-full hidden lg:block"
+            className="mt-12 hidden w-full lg:block"
             src={DetailAbout3.src}
           />
         </div>
 
-        <div className="w-full lg:w-1/2 px-4 flex items-center lg:sticky top-24 pt-24">
+        <div className="top-24 flex w-full items-center px-4 pt-24 lg:sticky lg:w-1/2">
           <div className="px-2 lg:px-12">
-            <h2 className="uppercase text-brown text-bold">Về chúng tôi</h2>
+            <h2 className="text-bold uppercase text-brown">Về chúng tôi</h2>
             <div className="font-light">
               <p className="mt-2">
                 Tại NOIE Việt Nam, chúng tôi xác định rõ trách nhiệm đồng hành
@@ -115,15 +115,15 @@ export default function Cover() {
 
       {/* 1a */}
       <section className="flex flex-wrap items-start">
-        <div className="mt-12 lg:mt-0 w-full lg:w-1/2 px-4 flex items-center lg:sticky top-24 pt-0 lg:pt-24">
-          <div className="px-2 lg:px-12 text-right">
+        <div className="top-24 mt-12 flex w-full items-center px-4 pt-0 lg:sticky lg:mt-0 lg:w-1/2 lg:pt-24">
+          <div className="px-2 text-right lg:px-12">
             <strong className="uppercase">Dịch vụ</strong>
-            <h2 className="mt-3 uppercase text-brown text-bold">
+            <h2 className="text-bold mt-3 uppercase text-brown">
               TƯ VẤN THIẾT KẾ VÀ THI CÔNG
             </h2>
             <div className="font-light">
               <div className="mt-2 flex items-end justify-end">
-                <p className="text-justify leading-6 w-full lg:w-1/2">
+                <p className="w-full text-justify leading-6 lg:w-1/2">
                   Với quy trình tập trung vào khai thác yếu tố khác biệt, cá
                   tính hóa của từng gia chủ, chúng tối luôn đồng hành cùng khách
                   hàng để tạo ra những không gian tối ưu nhất về công năng, thẩm

@@ -6,7 +6,7 @@ const s3 = new S3Client({
   credentials: {
     accessKeyId: process.env.ACCESS_KEY || '',
     secretAccessKey: process.env.SECRET_KEY || '',
-  }
+  },
 })
 
 type Response = {

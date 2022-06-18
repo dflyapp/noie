@@ -15,7 +15,7 @@ export default async function handler(
 
   if (req.method === 'DELETE') {
     const result = await prisma.images.delete({
-      where: { id: imageId }
+      where: { id: imageId },
     })
     res.json(result)
   } else {

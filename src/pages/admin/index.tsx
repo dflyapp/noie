@@ -34,10 +34,10 @@ export default function Admin() {
         <article className="container mx-auto px-2 sm:px-0">
           <h1 className="text-left">Admin Page</h1>
           <p>Hello {session?.user?.name}!</p>
-          <div className='flex items-center'>
+          <div className="flex items-center">
             <p>Signed in as {userEmail} </p>
             <button
-              className="text-sm bg-white text-red-500 rounded-md px-2 py-1 hover:opacity-80"
+              className="rounded-md bg-white px-2 py-1 text-sm text-red-500 hover:opacity-80"
               onClick={() => signOut()}
             >
               (Sign out)

@@ -17,7 +17,7 @@ const Menu = styled.ul`
 
 const Register = styled.a`
   border: 1px solid white;
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px 20px;
   cursor: pointer;
   &:hover {
@@ -27,7 +27,7 @@ const Register = styled.a`
 
 const Wrapper = styled.header`
   &.is-scrolled {
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
   }
 `
 
@@ -44,14 +44,18 @@ export default function Header() {
     window.addEventListener('scroll', listenScrollEvent)
   }, [])
   return (
-    <Wrapper className={`z-90 fixed top-0 w-full left-0 z-10 px-2 flex justify-between items-center ${scrolled ? 'is-scrolled py-2' : 'pt-4 pb-8 '}`}>
-      <div className='ml-2 lg:ml-12'>
-        <a className='text-white cursor-pointer'>
+    <Wrapper
+      className={`z-90 fixed top-0 left-0 z-10 flex w-full items-center justify-between px-2 ${
+        scrolled ? 'is-scrolled py-2' : 'pt-4 pb-8 '
+      }`}
+    >
+      <div className="ml-2 lg:ml-12">
+        <a className="cursor-pointer text-white">
           <img src={Logo.src} className={scrolled ? 'w-12' : 'w-24'} />
         </a>
       </div>
       <div>
-        <Menu className='text-white uppercase hidden lg:flex'>
+        <Menu className="hidden uppercase text-white lg:flex">
           <li>giới thiệu</li>
           <li>dịch vụ</li>
           <li>dự án</li>
@@ -59,8 +63,8 @@ export default function Header() {
           <li>liên hệ</li>
         </Menu>
       </div>
-      <div className='mr-2 lg:mr-12'>
-        <Register className='uppercase text-white'>Đăng ký tư vấn</Register>
+      <div className="mr-2 lg:mr-12">
+        <Register className="uppercase text-white">Đăng ký tư vấn</Register>
       </div>
     </Wrapper>
   )

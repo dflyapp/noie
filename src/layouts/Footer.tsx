@@ -18,19 +18,19 @@ export default function Footer() {
   return (
     <>
       <section className="pt-48">
-        <div className="mt-24 container mx-auto relative">
+        <div className="container relative mx-auto mt-24">
           <img
-            className="absolute text-center l-0 r-0 ml-auto mr-auto"
+            className="l-0 r-0 absolute ml-auto mr-auto text-center"
             style={{ left: 0, right: 0, top: '-100px' }}
             src={Moon.src}
             alt="moon"
           />
 
-          <p className="text-brown text-center uppercase text-4xl w-10/12 mx-auto">
-            <span className='relative'>
+          <p className="mx-auto w-10/12 text-center text-4xl uppercase text-brown">
+            <span className="relative">
               NOIE
               <img
-                className="absolute l-0 t-0 hidden lg:block"
+                className="l-0 t-0 absolute hidden lg:block"
                 style={{ left: '-50px', top: '-50px' }}
                 src={Plus.src}
                 alt="plug"
@@ -40,8 +40,10 @@ export default function Footer() {
             gian sống trãi nghiệm tối ưu nhất.
           </p>
 
-          <div className="flex justify-between items-center mt-12">
-            <h1 className="text-2xl lg:text-4xl text-gray-400 uppercase ml-4 lg:ml-24 mt-0">Thông tin</h1>
+          <div className="mt-12 flex items-center justify-between">
+            <h1 className="ml-4 mt-0 text-2xl uppercase text-gray-400 lg:ml-24 lg:text-4xl">
+              Thông tin
+            </h1>
             <div>
               <Image
                 src={FooterRightLogo}
@@ -56,17 +58,17 @@ export default function Footer() {
       {/* background image */}
       <BackgroundImage className="bg-gray-300 pb-48">
         <div className="container mx-auto flex justify-between">
-          <div className="text-white uppercase text-center">
+          <div className="text-center uppercase text-white">
             <h1 className="font-bold">Hãy liên hệ với chúng tôi</h1>
             <p className="font-light">info.noie@gmail.com</p>
-            <div className="text-center mt-24">
+            <div className="mt-24 text-center">
               <p className="font-light">Địa chỉ</p>
               <p className="font-light">Hotline</p>
               <p className="font-bold">Mạng xã hội</p>
             </div>
           </div>
           {/* logo */}
-          <div className='pt-12'>
+          <div className="pt-12">
             <Image src={Logo} alt="logo" width={150} height={130} />
           </div>
         </div>

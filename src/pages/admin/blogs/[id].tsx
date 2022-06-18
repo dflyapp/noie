@@ -55,12 +55,12 @@ export default function Blogs() {
         <Toaster />
         <nav className="flex">
           <Link passHref href="/admin">
-            <span className="text-left cursor-pointer block underline text-red-500">
+            <span className="block cursor-pointer text-left text-red-500 underline">
               Admin
             </span>
           </Link>
           <Link passHref href="/admin/blogs">
-            <span className="ml-4 text-left cursor-pointer block underline text-red-500">
+            <span className="ml-4 block cursor-pointer text-left text-red-500 underline">
               Blogs
             </span>
           </Link>
@@ -88,7 +88,7 @@ export default function Blogs() {
                 alert('something went wrong...')
               })
           }}
-          className="mt-8 bg-red-500 text-white px-2 py-2 rounded-md"
+          className="mt-8 rounded-md bg-red-500 px-2 py-2 text-white"
         >
           delete this blog
         </button>

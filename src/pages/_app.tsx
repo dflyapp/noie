@@ -27,14 +27,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
       <UserContext.Provider value={{ user, setUser }}>
-      <LoadingContext.Provider value={{ loading, setLoading }}>
-        <Component {...pageProps} />
-        {loading && (
-          <LoadingWrapper>
-            <div className="text-white">Loading...</div>
-          </LoadingWrapper>
-        )}
-      </LoadingContext.Provider>
+        <LoadingContext.Provider value={{ loading, setLoading }}>
+          <Component {...pageProps} />
+          {loading && (
+            <LoadingWrapper>
+              <div className="text-white">Loading...</div>
+            </LoadingWrapper>
+          )}
+        </LoadingContext.Provider>
       </UserContext.Provider>
     </SessionProvider>
   )

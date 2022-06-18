@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from 'next-auth/react'
 
-export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
+export default function IsAdmin({ children }: JSX.ElementChildrenAttribute) {
   const { data: session } = useSession()
 
   return (
@@ -9,10 +9,10 @@ export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
         session?.isAdmin ? (
           <>{children}</>
         ) : (
-          <div className='container mx-auto py-24 px-2 md:px-0'>
+          <div className="container mx-auto py-24 px-2 md:px-0">
             <p>You are not admin user, {session?.user?.name}</p>
             <button
-              className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
+              className="rounded-md bg-red-500 px-2 py-1 text-white hover:opacity-80"
               onClick={() => signOut()}
             >
               Sign out
@@ -20,10 +20,10 @@ export default function IsAdmin({children}: JSX.ElementChildrenAttribute) {
           </div>
         )
       ) : (
-        <div className='container mx-auto py-24 px-2 md:px-0'>
+        <div className="container mx-auto py-24 px-2 md:px-0">
           Not signed in <br />
           <button
-            className="bg-red-500 text-white rounded-md px-2 py-1 hover:opacity-80"
+            className="rounded-md bg-red-500 px-2 py-1 text-white hover:opacity-80"
             onClick={() => signIn()}
           >
             Sign in

@@ -37,9 +37,7 @@ export default function CreateBlog() {
   const initialValue: Descendant[] = [
     {
       type: 'paragraph',
-      children: [
-        { text: 'This is editable plain text' },
-      ],
+      children: [{ text: 'This is editable plain text' }],
     },
   ]
   const [editorContent, setEditorContent] = useState<any>(initialValue)
@@ -72,12 +70,12 @@ export default function CreateBlog() {
         <Toaster />
         <nav className="flex">
           <Link passHref href="/admin">
-            <span className="text-left cursor-pointer block underline text-red-500">
+            <span className="block cursor-pointer text-left text-red-500 underline">
               Admin
             </span>
           </Link>
           <Link passHref href="/admin/blogs">
-            <span className="ml-4 text-left cursor-pointer block underline text-red-500">
+            <span className="ml-4 block cursor-pointer text-left text-red-500 underline">
               Blogs
             </span>
           </Link>
@@ -92,11 +90,11 @@ export default function CreateBlog() {
               <label htmlFor="title">Title</label>
               <input
                 id="title"
-                className="border mr-2 px-2 py-1 w-full"
+                className="mr-2 w-full border px-2 py-1"
                 {...register('title', { required: true })}
               />
               {errors.title && (
-                <span className="text-red-500 text-light text-sm">
+                <span className="text-light text-sm text-red-500">
                   This field is required
                 </span>
               )}
@@ -107,11 +105,11 @@ export default function CreateBlog() {
               <label htmlFor="title">Slug</label>
               <input
                 id="slug"
-                className="border mr-2 px-2 py-1 w-full"
+                className="mr-2 w-full border px-2 py-1"
                 {...register('slug', { required: true })}
               />
               {errors.title && (
-                <span className="text-red-500 text-light text-sm">
+                <span className="text-light text-sm text-red-500">
                   This field is required
                 </span>
               )}
@@ -122,11 +120,11 @@ export default function CreateBlog() {
               <label htmlFor="description">Description</label>
               <input
                 id="slug"
-                className="border mr-2 px-2 py-1 w-full"
+                className="mr-2 w-full border px-2 py-1"
                 {...register('description', { required: true })}
               />
               {errors.title && (
-                <span className="text-red-500 text-light text-sm">
+                <span className="text-light text-sm text-red-500">
                   This field is required
                 </span>
               )}
@@ -153,7 +151,7 @@ export default function CreateBlog() {
                 <Editable placeholder="Enter some plain text..." />
               </Slate>
               {errors.content && (
-                <span className="text-red-500 text-light text-sm">
+                <span className="text-light text-sm text-red-500">
                   This field is required
                 </span>
               )}
@@ -161,7 +159,7 @@ export default function CreateBlog() {
 
             <div className="mt-4">
               <input
-                className="bg-red-600 text-white px-2 py-1 rounded-md cursor-pointer hover:opacity-80"
+                className="cursor-pointer rounded-md bg-red-600 px-2 py-1 text-white hover:opacity-80"
                 type="submit"
                 value="Create new blog"
               />

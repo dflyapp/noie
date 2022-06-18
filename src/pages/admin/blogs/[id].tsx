@@ -3,13 +3,10 @@ import Link from 'next/link'
 import useSwr from 'swr'
 import { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
-
-// slate
-import { createEditor } from 'slate'
-import { Slate, Editable, withReact } from 'slate-react'
-import { useCallback, useMemo } from 'react'
 import axios from 'axios'
+
 import IsAdmin from 'layouts/IsAdmin'
+import EditorRender from 'components/EditorRender'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -21,23 +18,6 @@ export default function Blogs() {
     id ? `/api/blogs/${router.query.id}` : null,
     id ? fetcher : null
   )
-
-  // slate
-  const editor = useMemo(() => withReact(createEditor()), [])
-  // const renderElement = useCallback(({ attributes, children, element }) => {
-  //   switch (element.type) {
-  //     case 'quote':
-  //       return <blockquote {...attributes}>{children}</blockquote>
-  //     case 'link':
-  //       return (
-  //         <a {...attributes} href={element.url}>
-  //           {children}
-  //         </a>
-  //       )
-  //     default:
-  //       return <p {...attributes}>{children}</p>
-  //   }
-  // }, [])
 
   if (error) return <div>Failed to load blog</div>
   if (!data) return <div>Loading...</div>
@@ -70,12 +50,7 @@ export default function Blogs() {
         <p>{data.slug}</p>
         <p>{data.description}</p>
 
-        {/* {data.content && (
-      <Slate editor={editor}>
-        <Editable renderElement={renderElement} value={data.content} />
-      </Slate>
-    )} */}
-        <div>{JSON.stringify(data.content)}</div>
+        {data.content && <EditorRender value={data.content} />}
 
         <button
           onClick={() => {

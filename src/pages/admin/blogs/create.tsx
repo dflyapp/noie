@@ -4,13 +4,13 @@ import { Toaster } from 'react-hot-toast'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { BaseEditor, Descendant } from 'slate'
 import { ReactEditor } from 'slate-react'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid'
 
 import IsAdmin from 'layouts/IsAdmin'
-import Editor from 'components/Editor'
+import Editor from 'components/EditorCompose'
 
 declare module 'slate' {
   interface CustomTypes {
@@ -25,7 +25,7 @@ type Inputs = {
   title: string
   slug: string
   description: string
-  content: any
+  content: Descendant[]
 }
 
 type CustomElement = { type: 'paragraph'; children: CustomText[] }
@@ -37,7 +37,7 @@ export default function CreateBlog() {
   const initialValue: Descendant[] = [
     {
       type: 'paragraph',
-      children: [{ text: 'This is editable plain text' }],
+      children: [{ text: 'Edit me' }],
     },
   ]
   const [editorContent, setEditorContent] = useState<Descendant[]>(initialValue)
@@ -136,7 +136,7 @@ export default function CreateBlog() {
                 initialValue={initialValue}
                 setEditorContent={setEditorContent}
               />
-              {errors.content && (
+              {errors.content && errors.content.length === 0 && (
                 <span className="text-light text-sm text-red-500">
                   This field is required
                 </span>

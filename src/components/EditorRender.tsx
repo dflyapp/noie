@@ -5,8 +5,21 @@ import { Slate, Editable, withReact } from 'slate-react'
 type Props = {
   value: Descendant[]
 }
+
+const Leaf = (props: any) => {
+  return (
+    <span
+      {...props.attributes}
+      style={{ fontWeight: props.leaf.bold ? 'bold' : 'normal' }}
+    >
+      {props.children}
+    </span>
+  )
+}
+
 export default function MyEditor({ value }: Props) {
   const [editor] = useState(() => withReact(createEditor()))
+
   const renderElement = useCallback(
     ({ attributes, children, element }: any) => {
       switch (element.type) {
@@ -26,10 +39,17 @@ export default function MyEditor({ value }: Props) {
     },
     []
   )
+  const renderLeaf = useCallback((props: any) => {
+    return <Leaf {...props} />
+  }, [])
 
   return (
     <Slate editor={editor} value={value}>
-      <Editable renderElement={renderElement} readOnly />
+      <Editable
+        renderElement={renderElement}
+        renderLeaf={renderLeaf}
+        readOnly
+      />
     </Slate>
   )
 }

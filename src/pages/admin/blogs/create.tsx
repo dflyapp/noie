@@ -2,23 +2,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Toaster } from 'react-hot-toast'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { BaseEditor, Descendant } from 'slate'
-import { ReactEditor } from 'slate-react'
-import { useCallback, useState } from 'react'
+import { Descendant } from 'slate'
+import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid'
 
 import IsAdmin from 'layouts/IsAdmin'
 import Editor from 'components/EditorCompose'
-
-declare module 'slate' {
-  interface CustomTypes {
-    Editor: BaseEditor & ReactEditor
-    Element: CustomElement
-    Text: CustomText
-  }
-}
 
 type Inputs = {
   id: string
@@ -28,24 +19,17 @@ type Inputs = {
   content: Descendant[]
 }
 
-type CustomElement = { type: 'paragraph'; children: CustomText[] }
-type CustomText = { text: string }
-
 export default function CreateBlog() {
   const router = useRouter()
 
   const initialValue: Descendant[] = [
-    {
-      type: 'paragraph',
-      children: [{ text: 'Edit me' }],
-    },
+    { bold: false, type: 'paragraph', children: [{ text: 'Edit me' }] },
   ]
   const [editorContent, setEditorContent] = useState<Descendant[]>(initialValue)
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -136,11 +120,6 @@ export default function CreateBlog() {
                 initialValue={initialValue}
                 setEditorContent={setEditorContent}
               />
-              {errors.content && errors.content.length === 0 && (
-                <span className="text-light text-sm text-red-500">
-                  This field is required
-                </span>
-              )}
             </div>
 
             <div className="mt-4">

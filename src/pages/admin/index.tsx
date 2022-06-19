@@ -31,7 +31,7 @@ export default function Admin() {
       </Head>
 
       <IsAdmin>
-        <article className="container mx-auto px-2 sm:px-0">
+        <article>
           <h1 className="text-left">Admin Page</h1>
           <p>Hello {session?.user?.name}!</p>
           <div className="flex items-center">

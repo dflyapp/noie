@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid'
 
 import IsAdmin from 'layouts/IsAdmin'
-import Editor from 'components/EditorCompose'
+import MyEditor from 'components/MyEditor'
 
 type Inputs = {
   id: string
@@ -66,7 +66,7 @@ export default function CreateBlog() {
 
         <h1>Create a new blog</h1>
 
-        <section className="w-full md:w-1/2">
+        <section>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* title */}
             <div>
@@ -116,9 +116,11 @@ export default function CreateBlog() {
             {/* content editor */}
             <p className="mt-2">Content</p>
             <div className="border p-2">
-              <Editor
+              <MyEditor
+                readOnly={false}
                 initialValue={initialValue}
                 setEditorContent={setEditorContent}
+                showTools={true}
               />
             </div>
 

@@ -80,7 +80,7 @@ export default function Gallery() {
 
         <h1>Gallery</h1>
 
-        <section className="border p-2">
+        <section className="flex justify-between border p-2">
           <input ref={ref} type="file" onChange={(e) => selectFile(e)} />
           <button
             onClick={uploadPhoto}

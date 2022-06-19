@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 
 import IsAdmin from 'layouts/IsAdmin'
-import EditorRender from 'components/EditorRender'
+import MyEditor from 'components/MyEditor'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -50,7 +50,13 @@ export default function Blogs() {
         <p>{data.slug}</p>
         <p>{data.description}</p>
 
-        {data.content && <EditorRender value={data.content} />}
+        {data.content && (
+          <MyEditor
+            readOnly={true}
+            showTools={false}
+            initialValue={data.content}
+          />
+        )}
 
         <button
           onClick={() => {

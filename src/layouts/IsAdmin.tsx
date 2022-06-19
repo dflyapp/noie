@@ -4,12 +4,12 @@ export default function IsAdmin({ children }: JSX.ElementChildrenAttribute) {
   const { data: session } = useSession()
 
   return (
-    <>
+    <div className="container mx-auto w-full py-12 px-2 md:w-1/2 md:px-0">
       {session ? (
         session?.isAdmin ? (
           <>{children}</>
         ) : (
-          <div className="container mx-auto py-24 px-2 md:px-0">
+          <div>
             <p>You are not admin user, {session?.user?.name}</p>
             <button
               className="rounded-md bg-red-500 px-2 py-1 text-white hover:opacity-80"
@@ -20,7 +20,7 @@ export default function IsAdmin({ children }: JSX.ElementChildrenAttribute) {
           </div>
         )
       ) : (
-        <div className="container mx-auto py-24 px-2 md:px-0">
+        <div>
           Not signed in <br />
           <button
             className="rounded-md bg-red-500 px-2 py-1 text-white hover:opacity-80"
@@ -30,6 +30,6 @@ export default function IsAdmin({ children }: JSX.ElementChildrenAttribute) {
           </button>
         </div>
       )}
-    </>
+    </div>
   )
 }

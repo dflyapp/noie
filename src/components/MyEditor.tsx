@@ -68,7 +68,9 @@ const CustomEditor = {
 
 type EditorProps = {
   initialValue: Descendant[]
-  setEditorContent: Dispatch<SetStateAction<Descendant[]>>
+  setEditorContent?: Dispatch<SetStateAction<Descendant[]>>
+  showTools: boolean
+  readOnly: boolean
 }
 
 const CodeElement = (props: any) => {
@@ -94,9 +96,11 @@ const Leaf = (props: any) => {
   )
 }
 
-export default function EditorCompose({
+export default function MyEditor({
   initialValue,
   setEditorContent,
+  showTools,
+  readOnly,
 }: EditorProps) {
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
@@ -122,26 +126,29 @@ export default function EditorCompose({
           const isAstChange = editor.operations.some(
             (op) => 'set_selection' !== op.type
           )
-          if (isAstChange) {
+          if (isAstChange && setEditorContent) {
             setEditorContent(value)
           }
         }}
       >
-        <div className="mb-8">
-          <a
-            className="round-md cursor-pointer bg-gray-500 p-1 text-xs text-white"
-            onClick={() => CustomEditor.toggleBoldMark(editor)}
-          >
-            Bold
-          </a>
-          <a
-            className="round-md ml-4 cursor-pointer bg-gray-500 p-1 text-xs text-white "
-            onClick={() => CustomEditor.toggleCodeBlock(editor)}
-          >
-            Code Block
-          </a>
-        </div>
+        {showTools && (
+          <div className="mb-8">
+            <a
+              className="round-md cursor-pointer bg-gray-500 p-1 text-xs text-white"
+              onClick={() => CustomEditor.toggleBoldMark(editor)}
+            >
+              Bold
+            </a>
+            <a
+              className="round-md ml-4 cursor-pointer bg-gray-500 p-1 text-xs text-white "
+              onClick={() => CustomEditor.toggleCodeBlock(editor)}
+            >
+              Code Block
+            </a>
+          </div>
+        )}
         <Editable
+          readOnly={readOnly}
           renderElement={renderElement}
           renderLeaf={renderLeaf}
           onKeyDown={(event) => {

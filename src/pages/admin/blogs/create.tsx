@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import IsAdmin from 'layouts/IsAdmin'
 import MyEditor from 'components/MyEditor'
+import Tiptap from 'components/Tiptap'
 
 type Inputs = {
   id: string
@@ -25,7 +26,7 @@ export default function CreateBlog() {
   const initialValue: Descendant[] = [
     { bold: false, type: 'paragraph', children: [{ text: 'Edit me' }] },
   ]
-  const [editorContent, setEditorContent] = useState<Descendant[]>(initialValue)
+  const [editorContent, setEditorContent] = useState<any>(initialValue)
 
   const {
     register,
@@ -35,6 +36,7 @@ export default function CreateBlog() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     data.id = uuidv4()
     data.content = editorContent
+    console.log(editorContent)
     axios.post('/api/blogs', data).then(() => {
       router.push('/admin/blogs')
     })
@@ -51,6 +53,7 @@ export default function CreateBlog() {
           />
         </Head>
         <Toaster />
+
         <nav className="flex">
           <Link passHref href="/admin">
             <span className="block cursor-pointer text-left text-red-500 underline">
@@ -115,14 +118,7 @@ export default function CreateBlog() {
 
             {/* content editor */}
             <p className="mt-2">Content</p>
-            <div className="border p-2">
-              <MyEditor
-                readOnly={false}
-                initialValue={initialValue}
-                setEditorContent={setEditorContent}
-                showTools={true}
-              />
-            </div>
+            <Tiptap editable={true} setEditorContent={setEditorContent} />
 
             <div className="mt-4">
               <input

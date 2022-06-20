@@ -4,9 +4,12 @@ import useSwr from 'swr'
 import { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import { EditorContent, useEditor } from '@tiptap/react'
 
 import IsAdmin from 'layouts/IsAdmin'
-import MyEditor from 'components/MyEditor'
+import Tiptap from 'components/Tiptap'
+import StarterKit from '@tiptap/starter-kit'
+import { useEffect } from 'react'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -50,13 +53,7 @@ export default function Blogs() {
         <p>{data.slug}</p>
         <p>{data.description}</p>
 
-        {data.content && (
-          <MyEditor
-            readOnly={true}
-            showTools={false}
-            initialValue={data.content}
-          />
-        )}
+        {data.content && <Tiptap editable={false} content={data.content} />}
 
         <button
           onClick={() => {

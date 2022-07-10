@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 import Logo from 'assets/logo.webp'
 
@@ -56,11 +57,21 @@ export default function Header() {
       </div>
       <div>
         <Menu className="hidden uppercase text-white lg:flex">
-          <li>giới thiệu</li>
-          <li>dịch vụ</li>
-          <li>dự án</li>
-          <li>câu chuyện</li>
-          <li>liên hệ</li>
+          <li>
+            <Link href="/gioi-thieu">
+              <a>giới thiệu</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/quy-trinh-thiet-ke">
+              <a>quy trình thiết kế</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/quy-trinh-thi-cong">
+              <a>quy trình thi công</a>
+            </Link>
+          </li>
         </Menu>
       </div>
       <div className="mr-2 lg:mr-12">

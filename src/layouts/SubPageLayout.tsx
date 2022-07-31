@@ -1,18 +1,41 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
+
+import SubPageLogo from 'assets/subpage/logo.svg'
+import SubPageLogoSquare from 'assets/subpage/logo-square.svg'
+import Cover1 from 'assets/subpage/cover1.jpg'
+import Cover2 from 'assets/subpage/cover2.jpg'
+import Cover3 from 'assets/subpage/cover3.jpg'
 
 interface LayoutProps {
   children: ReactNode
   metaTitle: string
   metaDescription: string
+  pageNumber: number
 }
 
 export default function SubPageLayout({
   children,
   metaTitle,
   metaDescription,
+  pageNumber,
 }: LayoutProps) {
+  let backgroundLink: string = ''
+
+  if (pageNumber === 1) {
+    backgroundLink = `url(${Cover1.src})`
+  }
+
+  if (pageNumber === 2) {
+    backgroundLink = `url(${Cover2.src})`
+  }
+
+  if (pageNumber === 3) {
+    backgroundLink = `url(${Cover3.src})`
+  }
+
   return (
     <>
       <Head>
@@ -21,19 +44,46 @@ export default function SubPageLayout({
       </Head>
 
       <h1 className="text-center text-brown">
-        <Link href="/">Logo</Link>
+        <Link className="cursor-pointer" href="/" passHref>
+          <Image
+            className="cursor-pointer"
+            src={SubPageLogo}
+            alt="logo"
+            width={300}
+            height={100}
+          />
+        </Link>
       </h1>
-      <div className="h-screen bg-gray-500 pt-12">
-        <div className="mx-24 bg-white py-4 opacity-80">
-          <h1 className="text-center uppercase">{metaDescription}</h1>
+      <div
+        className="h-screen bg-gray-500 pt-12"
+        style={{ backgroundSize: 'cover', backgroundImage: backgroundLink }}
+      >
+        <div className="my-12 flex items-center justify-center">
+          <Image src={SubPageLogoSquare} alt="image" />
+        </div>
+        <div className="mx-auto w-fit bg-white px-24 py-4 opacity-80">
+          <h1 className="text-center uppercase tracking-widest">
+            {metaDescription}
+          </h1>
+          <div
+            className="mx-auto mb-8"
+            style={{ width: '80px', height: '2px', background: 'black' }}
+          ></div>
         </div>
       </div>
       {children}
-      <footer className="py-12">
+      <footer className="py-12 bg-gray-200">
         <div className="flex justify-center">
-          <button className="bg-brown px-4 py-2 uppercase text-white">
-            Đăng ký tư vấn
-          </button>
+          <p className="text-2xl py-2 inline-block w-fit bg-brown px-12 text-center text-white">
+            ĐĂNG KÝ TƯ VẤN
+          </p>
+        </div>
+        <div className="text-center text-gray-800 mt-8">
+          <p>
+            Địa chỉ: ADAM REAL TOWER Số 9 Võ Thị Sáu, Phường Đa Kao, Quận 1,
+            Thành Phố Hồ Chí Minh
+          </p>
+          <p>Hotline: 0931 266 890</p>
         </div>
       </footer>
     </>

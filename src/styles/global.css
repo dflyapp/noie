@@ -5,6 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 @font-face {
+  font-family: fontHeading;
+  src: url('../assets/fonts/heading/LHanoienne.otf');
+}
+
+@font-face {
   font-family: myFont;
   src: url('../assets/fonts/TTCommonsLight.otf');
   font-weight: 300;
@@ -29,6 +34,7 @@ body {
   font-family: myFont, sans-serif;
   font-weight: 400;
   font-size: 18px;
+  @apply text-gray-900;
 }
 
 a {
@@ -41,23 +47,27 @@ a {
 }
 
 h1 {
+  font-family: fontHeading, 'Courier New', Courier, monospace;
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 h2 {
+  font-family: fontHeading, 'Courier New', Courier, monospace;
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 
 h3 {
+  font-family: fontHeading, 'Courier New', Courier, monospace;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
 }
 
 h4 {
+  font-family: fontHeading, 'Courier New', Courier, monospace;
   font-size: 1.3rem;
   line-height: 1.8rem;
 }

@@ -2,7 +2,7 @@ import SubPageLayout from 'layouts/SubPageLayout'
 
 export default function GioiThieu() {
   return (
-    <SubPageLayout metaTitle="NOIE - Giới thiệu" metaDescription="Giới thiệu" pageNumber={1}>
+    <SubPageLayout metaTitle="NOIE - Giới thiệu" metaDescription="Giới thiệu" pageNumber={1} coverTitle="Giới thiệu">
       <h1 className="text-center">GIỚI THIỆU VỀ NOIE VIỆT NAM</h1>
       <div className="container mx-auto">
         <p>

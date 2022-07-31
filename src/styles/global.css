@@ -10,6 +10,16 @@
 }
 
 @font-face {
+  font-family: fontBodyThin;
+  src: url('../assets/fonts/body/Montserrat-Thin.otf');
+}
+
+@font-face {
+  font-family: fontBodyBold;
+  src: url('../assets/fonts/body/Montserrat-Bold.otf');
+}
+
+@font-face {
   font-family: myFont;
   src: url('../assets/fonts/TTCommonsLight.otf');
   font-weight: 300;
@@ -31,7 +41,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: myFont, sans-serif;
+  font-family: fontBodyThin, sans-serif;
   font-weight: 400;
   font-size: 18px;
   @apply text-gray-900;
@@ -54,20 +64,20 @@ h1 {
 }
 
 h2 {
-  font-family: fontHeading, 'Courier New', Courier, monospace;
+  font-family: fontBodyBold, 'Courier New', Courier, monospace;
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 
 h3 {
-  font-family: fontHeading, 'Courier New', Courier, monospace;
+  font-family: fontBodyBold, 'Courier New', Courier, monospace;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
 }
 
 h4 {
-  font-family: fontHeading, 'Courier New', Courier, monospace;
+  font-family: fontBodyBold, 'Courier New', Courier, monospace;
   font-size: 1.3rem;
   line-height: 1.8rem;
 }

@@ -13,6 +13,8 @@ interface LayoutProps {
   children: ReactNode
   metaTitle: string
   metaDescription: string
+  coverTitle: string
+  coverDescription?: string
   pageNumber: number
 }
 
@@ -20,6 +22,8 @@ export default function SubPageLayout({
   children,
   metaTitle,
   metaDescription,
+  coverTitle,
+  coverDescription,
   pageNumber,
 }: LayoutProps) {
   let backgroundLink: string = ''
@@ -63,8 +67,9 @@ export default function SubPageLayout({
         </div>
         <div className="mx-auto w-fit bg-white px-24 py-4 opacity-80">
           <h1 className="text-center uppercase tracking-widest">
-            {metaDescription}
+            {coverTitle}
           </h1>
+          {coverDescription && <p className="text-center uppercase tracking-widest">{coverDescription}</p>}
           <div
             className="mx-auto mb-8"
             style={{ width: '80px', height: '2px', background: 'black' }}
@@ -74,9 +79,9 @@ export default function SubPageLayout({
       {children}
       <footer className="py-12 bg-gray-200">
         <div className="flex justify-center">
-          <p className="text-2xl py-2 inline-block w-fit bg-brown px-12 text-center text-white">
+          <h3 className="text-2xl py-2 inline-block w-fit bg-brown px-12 text-center text-white">
             ĐĂNG KÝ TƯ VẤN
-          </p>
+          </h3>
         </div>
         <div className="text-center text-gray-800 mt-8">
           <p>

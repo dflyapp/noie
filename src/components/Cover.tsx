@@ -138,7 +138,7 @@ export default function Cover() {
                       alt="dich vu"
                       src={HL.src}
                       className="absolute right-0 z-20"
-                      style={{ height: '24px', right: '-40px' }}
+                      style={{ height: '30px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thiết kế kiến trúc +</span>
@@ -149,7 +149,7 @@ export default function Cover() {
                       alt="dich vu thiet ke kien truc"
                       src={HL.src}
                       className="absolute right-0 z-20"
-                      style={{ height: '24px', right: '-40px' }}
+                      style={{ height: '30px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thiết kế nội thất +</span>
@@ -160,7 +160,7 @@ export default function Cover() {
                       alt="dich vu thiet ke noi that"
                       src={HL.src}
                       className="absolute right-0 z-20"
-                      style={{ height: '24px', right: '-40px' }}
+                      style={{ height: '30px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">Thi công phần thô +</span>
@@ -171,7 +171,7 @@ export default function Cover() {
                       alt="dich vu thi cong phan tho"
                       src={HL.src}
                       className="absolute right-0 z-20"
-                      style={{ height: '24px', right: '-40px' }}
+                      style={{ height: '30px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">
@@ -185,7 +185,7 @@ export default function Cover() {
                       alt="dich vu thi cong hoan thien"
                       src={HL.src}
                       className="absolute right-0 z-20"
-                      style={{ height: '24px', right: '-40px' }}
+                      style={{ height: '30px', right: '-40px' }}
                     />
                   )}
                   <span className="relative z-30">

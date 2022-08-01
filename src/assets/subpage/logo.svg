@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1100"
+   width="54.850418"
+   height="6.1430626"
+   viewBox="0 0 54.850418 6.1430626"
+   sodipodi:docname="Artboard 1.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1104" />
+  <sodipodi:namedview
+     id="namedview1102"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <g
+     id="g1108"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,-95.01532,585.82134)">
+    <path
+       d="M 0,0 H 186 V 458 H 0 Z"
+       style="fill:#474747;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path1110" />
+    <path
+       d="M 0.749,1 H 185.711 V 457.957 H 0.749 Z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path1112" />
+    <text
+       xml:space="preserve"
+       transform="matrix(1,0,0,-1,70.7954,435.8237)"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.7728px;font-family:'LHanoienne Typeface';-inkscape-font-specification:LHanoienneTypeface;writing-mode:lr-tb;fill:#d7a859;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text1364"><tspan
+         x="0 3.8182399 7.9276209 9.3212786"
+         y="0"
+         sodipodi:role="line"
+         id="tspan1362">NOIE</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(1,0,0,-1,82.531715,434.83096)"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.7728px;font-family:RonniesHand;-inkscape-font-specification:RonniesHand-Plain;writing-mode:lr-tb;fill:#d7a859;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text1368"><tspan
+         x="0 2.6489041 5.4075823 8.1662607 10.509706 11.531085 14.289763 16.714346 19.473024 22.231703 24.498783 27.257462"
+         y="0"
+         sodipodi:role="line"
+         id="tspan1366">Architecture</tspan></text>
+  </g>
+</svg>

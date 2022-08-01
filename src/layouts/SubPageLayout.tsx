@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import SubPageLogo from 'assets/subpage/logo.svg'
+import SubPageLogo from 'assets/subpage/logo.png'
 import SubPageLogoSquare from 'assets/subpage/logo-square.svg'
 import Cover1 from 'assets/subpage/cover1.jpg'
 import Cover2 from 'assets/subpage/cover2.jpg'
@@ -47,17 +47,15 @@ export default function SubPageLayout({
         <meta name="description" content={metaDescription} />
       </Head>
 
-      <h1 className="text-center text-brown">
+      <div className="text-center text-brown w-72 mx-auto my-12">
         <Link className="cursor-pointer" href="/" passHref>
           <Image
             className="cursor-pointer"
             src={SubPageLogo}
             alt="logo"
-            width={300}
-            height={100}
           />
         </Link>
-      </h1>
+      </div>
       <div
         className="h-screen bg-gray-500 pt-12"
         style={{ backgroundSize: 'cover', backgroundImage: backgroundLink }}
@@ -69,7 +67,11 @@ export default function SubPageLayout({
           <h1 className="text-center uppercase tracking-widest">
             {coverTitle}
           </h1>
-          {coverDescription && <p className="text-center uppercase tracking-widest">{coverDescription}</p>}
+          {coverDescription && (
+            <p className="text-center uppercase tracking-widest">
+              {coverDescription}
+            </p>
+          )}
           <div
             className="mx-auto mb-8"
             style={{ width: '80px', height: '2px', background: 'black' }}
@@ -77,13 +79,16 @@ export default function SubPageLayout({
         </div>
       </div>
       {children}
-      <footer className="py-12 bg-gray-200">
+      <footer className="bg-gray-200 py-12">
         <div className="flex justify-center">
-          <h3 className="text-2xl py-2 inline-block w-fit bg-brown px-12 text-center text-white">
+          <h3
+            className="inline-block w-fit bg-brown py-2 px-12 text-center text-2xl text-white"
+            style={{ letterSpacing: '5px' }}
+          >
             ĐĂNG KÝ TƯ VẤN
           </h3>
         </div>
-        <div className="text-center text-gray-800 mt-8">
+        <div className="mt-8 text-center text-gray-800">
           <p>
             Địa chỉ: ADAM REAL TOWER Số 9 Võ Thị Sáu, Phường Đa Kao, Quận 1,
             Thành Phố Hồ Chí Minh

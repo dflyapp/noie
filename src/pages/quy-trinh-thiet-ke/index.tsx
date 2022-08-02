@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import SubPageLayout from 'layouts/SubPageLayout'
 import Page2Bottom from 'assets/subpage/page2-bottom.jpg'
+import Icon from './Icon'
 
 export default function QuyTrinhThietKe() {
   return (
@@ -13,7 +14,7 @@ export default function QuyTrinhThietKe() {
       coverDescription="TRÃI NGHIỆM KHÔNG GIAN"
     >
       {/* 6 steps */}
-      <section className="text-center my-24 mx-auto">
+      <section className="my-24 mx-auto text-center">
         {[
           {
             id: 1,
@@ -47,10 +48,12 @@ export default function QuyTrinhThietKe() {
           },
         ].map((e, index) => {
           return (
-            <div key={index} className="px-1 w-72 mx-auto mt-8">
-              <div className='flex'>
-                <span className='bg-gray-800 text-white w-24 h-24 text-left p-4'>{e.id}</span>
-                <h4 className='py-2 px-4 bg-gray-600 text-white'>{e.title}</h4>
+            <div key={index} className="mx-auto mt-8 w-72 px-1">
+              <div className="flex">
+                <span className="h-24 w-24 bg-gray-800 p-4 text-left text-white">
+                  <Icon id={e.id} />
+                </span>
+                <h4 className="bg-gray-600 py-2 px-4 text-white">{e.title}</h4>
               </div>
               <p>{e.desc}</p>
             </div>

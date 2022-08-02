@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import SubPageLogo from 'assets/subpage/logo.png'
-import SubPageLogoSquare from 'assets/subpage/logo-square.svg'
+import Page1LogoSquare from 'assets/subpage/page1-logo-square.png'
 import Cover1 from 'assets/subpage/cover1.jpg'
 import Cover2 from 'assets/subpage/cover2.jpg'
 import Cover3 from 'assets/subpage/cover3.jpg'
@@ -60,8 +60,8 @@ export default function SubPageLayout({
         className="h-screen bg-gray-500 pt-12"
         style={{ backgroundSize: 'cover', backgroundImage: backgroundLink }}
       >
-        <div className="my-12 flex items-center justify-center">
-          <Image src={SubPageLogoSquare} alt="image" />
+        <div className="-mt-4 mb-4 flex items-center justify-center">
+          <Image src={Page1LogoSquare} alt="image" width={150} height={150} />
         </div>
         <div className="mx-auto w-fit bg-white px-24 py-4 opacity-80">
           <h1 className="text-center uppercase tracking-widest">

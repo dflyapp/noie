@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import SubPageLayout from 'layouts/SubPageLayout'
 import Page2Bottom from 'assets/subpage/page2-bottom.jpg'
+import Page2Art from 'assets/subpage/page2-art.webp'
 import Icon from './Icon'
 
 export default function QuyTrinhThietKe() {
@@ -14,7 +15,7 @@ export default function QuyTrinhThietKe() {
       coverDescription="TRÃI NGHIỆM KHÔNG GIAN"
     >
       {/* 6 steps */}
-      <section className="my-24 mx-auto text-center">
+      {/* <section className="my-24 mx-auto text-center">
         {[
           {
             id: 1,
@@ -59,6 +60,10 @@ export default function QuyTrinhThietKe() {
             </div>
           )
         })}
+      </section> */}
+
+      <section className='container mx-auto'>
+        <Image src={Page2Art} alt="art-board" />
       </section>
 
       {/* bottom cover */}

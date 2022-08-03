@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
 import SubPageLayout from 'layouts/SubPageLayout'
-import Page3Progress from 'assets/subpage/page3-progress.png'
 import PageCover1 from 'assets/subpage/page3-cover1.png'
 import PageCover2 from 'assets/subpage/page3-cover2.png'
 import PageCover3 from 'assets/subpage/page3-cover3.png'
+import Page3Art from 'assets/subpage/page3-art.webp'
 
 export default function QuyTrinhThiCong() {
   return (
@@ -21,8 +21,8 @@ export default function QuyTrinhThiCong() {
           Để một công trình có quá trình thi công xây dựng ít xảy ra sai xót
           nhất thì cần có một quy trình rõ ràng, chặt chẽ
         </p>
-        <div className="flex justify-center p-12">
-          <Image src={Page3Progress} alt="progress" layout="intrinsic" />
+        <div className="container mx-auto p-12">
+          <Image src={Page3Art} alt="progress" layout="intrinsic" />
         </div>
 
         <div className="container mx-auto flex flex-wrap text-center">

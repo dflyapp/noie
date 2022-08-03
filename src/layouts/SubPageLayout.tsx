@@ -81,12 +81,13 @@ export default function SubPageLayout({
       {children}
       <footer className="bg-gray-200 py-12">
         <div className="flex justify-center">
-          <h3
-            className="inline-block w-fit bg-brown py-2 px-12 text-center text-2xl text-white"
+          <a
+            href="tel:+0931266890"
+            className="inline-block w-fit bg-brown py-2 px-12 text-center text-2xl text-white cursor-pointer"
             style={{ letterSpacing: '5px' }}
           >
             ĐĂNG KÝ TƯ VẤN
-          </h3>
+          </a>
         </div>
         <div className="mt-8 text-center text-gray-800">
           <p>

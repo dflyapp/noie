@@ -22,12 +22,17 @@ export default function QuyTrinhThiCong() {
           nhất thì cần có một quy trình rõ ràng, chặt chẽ
         </p>
         <div className="container mx-auto p-12">
-          <Image src={Page3Art} alt="progress" layout="intrinsic" />
+          <Image
+            placeholder="blur"
+            src={Page3Art}
+            alt="progress"
+            layout="intrinsic"
+          />
         </div>
 
         <div className="container mx-auto flex flex-wrap text-center">
           <div className="w-full px-4 lg:w-1/3">
-            <Image src={PageCover1} alt="cover1" layout="responsive" />
+            <Image placeholder="blur" src={PageCover1} alt="cover1" layout="responsive" />
             <h3 className="mt-12 mb-4">ĐI THÉP SÀN</h3>
             <p>
               Bố trí thép sàn đúng tiêu chuẩn dựa theo nguyên tắc làm việc của
@@ -36,7 +41,7 @@ export default function QuyTrinhThiCong() {
             </p>
           </div>
           <div className="w-full px-4 lg:w-1/3">
-            <Image src={PageCover2} alt="cover2" layout="responsive" />
+            <Image placeholder="blur" src={PageCover2} alt="cover2" layout="responsive" />
             <h3 className="mt-12 mb-4">XÂY TÔ MẶT NGOÀI</h3>
             <p>
               Có rất nhiều công trình chỉ quan tâm đến tiến độ. Mà bỏ qua nhưng
@@ -47,7 +52,7 @@ export default function QuyTrinhThiCong() {
             </p>
           </div>
           <div className="w-full px-4 lg:w-1/3">
-            <Image src={PageCover3} alt="cover3" layout="responsive" />
+            <Image placeholder="blur" src={PageCover3} alt="cover3" layout="responsive" />
             <h3 className="mt-12 mb-4">THI CÔNG NỘI THẤT</h3>
             <p>
               Một căn nhà đẹp ngoài nền tảng thiết kế vững chắc còn phải qua

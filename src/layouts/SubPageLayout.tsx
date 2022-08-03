@@ -61,7 +61,7 @@ export default function SubPageLayout({
         style={{ backgroundSize: 'cover', backgroundImage: backgroundLink }}
       >
         <div className="-mt-4 mb-4 flex items-center justify-center">
-          <Image src={Page1LogoSquare} alt="image" width={150} height={150} />
+          <Image placeholder="blur" src={Page1LogoSquare} alt="image" width={150} height={150} />
         </div>
         <div className="mx-auto w-fit bg-white px-24 py-4 opacity-80">
           <h1 className="text-center uppercase tracking-widest">

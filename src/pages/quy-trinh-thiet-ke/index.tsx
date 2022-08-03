@@ -62,15 +62,15 @@ export default function QuyTrinhThietKe() {
         })}
       </section> */}
 
-      <section className='container mx-auto'>
-        <Image src={Page2Art} alt="art-board" />
+      <section className="container mx-auto">
+        <Image placeholder="blur" src={Page2Art} alt="art-board" />
       </section>
 
       {/* bottom cover */}
       <section className="bg-gray-200 p-12">
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">
-            <Image src={Page2Bottom} alt="bottom cover" layout="responsive" />
+            <Image placeholder="blur" src={Page2Bottom} alt="bottom cover" layout="responsive" />
           </div>
           <div className="flex w-full items-center justify-center bg-white pr-2 lg:w-1/2">
             <div className="p-8 text-center">

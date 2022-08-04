@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
 import { SessionProvider } from 'next-auth/react'
+import Script from 'next/script'
 
 import 'styles/global.css'
 import { LoadingContext } from 'context/loading'
@@ -25,18 +26,33 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [user, setUser] = useState<Record<string, unknown> | null>(null)
 
   return (
-    <SessionProvider session={session}>
-      <UserContext.Provider value={{ user, setUser }}>
-        <LoadingContext.Provider value={{ loading, setLoading }}>
-          <Component {...pageProps} />
-          {loading && (
-            <LoadingWrapper>
-              <div className="text-white">Loading...</div>
-            </LoadingWrapper>
-          )}
-        </LoadingContext.Provider>
-      </UserContext.Provider>
-    </SessionProvider>
+    <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-4J8G4TTG8K"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-4J8G4TTG8K');
+        `}
+      </Script>
+      <SessionProvider session={session}>
+        <UserContext.Provider value={{ user, setUser }}>
+          <LoadingContext.Provider value={{ loading, setLoading }}>
+            <Component {...pageProps} />
+            {loading && (
+              <LoadingWrapper>
+                <div className="text-white">Loading...</div>
+              </LoadingWrapper>
+            )}
+          </LoadingContext.Provider>
+        </UserContext.Provider>
+      </SessionProvider>
+    </>
   )
 }
 

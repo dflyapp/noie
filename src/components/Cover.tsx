@@ -130,8 +130,10 @@ export default function Cover() {
                   mỹ cũng như chi phí tốt.
                 </p>
               </div>
-              <p className="mt-2">Dịch vụ của chúng tôi bao gồm:</p>
-              <Features>
+              <p className="mt-2 hidden lg:block">
+                Dịch vụ của chúng tôi bao gồm:
+              </p>
+              <Features className="hidden lg:block ">
                 <li className="relative z-0">
                   {isVisible1a && (
                     <img

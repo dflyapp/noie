@@ -62,9 +62,11 @@ export default function Footer() {
             <h1 className="font-bold">Hãy liên hệ với chúng tôi</h1>
             <p className="font-light">info.noie@gmail.com</p>
             <div className="mt-24 text-center">
-              <p className="font-light">Địa chỉ</p>
-              <p className="font-light">Hotline</p>
-              <p className="font-bold">Mạng xã hội</p>
+              <p className="font-light">
+                Địa chỉ: ADAM REAL TOWER Số 9 Võ Thị Sáu, Phường Đa Kao, Quận 1,
+                Thành Phố Hồ Chí Minh
+              </p>
+              <p className="font-light">Hotline: 0931266890</p>
             </div>
           </div>
           {/* logo */}

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 
+import Hamburger from './Hamburger'
 import SubPageLogo from 'assets/subpage/logo.png'
 import Page1LogoSquare from 'assets/subpage/page1-logo-square.png'
 import Cover1 from 'assets/subpage/cover1.jpg'
@@ -47,21 +48,34 @@ export default function SubPageLayout({
         <meta name="description" content={metaDescription} />
       </Head>
 
-      <div className="text-center text-brown w-72 mx-auto my-12">
+      <div className="mx-auto my-12 hidden w-72 text-center text-brown lg:block">
         <Link className="cursor-pointer" href="/" passHref>
-          <Image
-            className="cursor-pointer"
-            src={SubPageLogo}
-            alt="logo"
-          />
+          <Image className="cursor-pointer" src={SubPageLogo} alt="logo" />
         </Link>
       </div>
+
+      {/* mobile */}
+      <div className="mx-auto my-12 block flex items-center justify-between px-4 lg:hidden">
+        <Link className="cursor-pointer" href="/" passHref>
+          <Image className="cursor-pointer" src={SubPageLogo} alt="logo" />
+        </Link>
+        <div className="ml-12 sm:ml-24">
+          <Hamburger className="text-brown" />
+        </div>
+      </div>
+
       <div
         className="h-screen bg-gray-500 pt-12"
         style={{ backgroundSize: 'cover', backgroundImage: backgroundLink }}
       >
         <div className="-mt-4 mb-4 flex items-center justify-center">
-          <Image placeholder="blur" src={Page1LogoSquare} alt="image" width={150} height={150} />
+          <Image
+            placeholder="blur"
+            src={Page1LogoSquare}
+            alt="image"
+            width={150}
+            height={150}
+          />
         </div>
         <div className="mx-auto w-fit bg-white px-24 py-4 opacity-80">
           <h1 className="text-center uppercase tracking-widest">
@@ -83,7 +97,7 @@ export default function SubPageLayout({
         <div className="flex justify-center">
           <a
             href="tel:+0931266890"
-            className="inline-block w-fit bg-brown py-2 px-12 text-center text-2xl text-white cursor-pointer"
+            className="inline-block w-fit cursor-pointer bg-brown py-2 px-12 text-center text-2xl text-white"
             style={{ letterSpacing: '5px' }}
           >
             ĐĂNG KÝ TƯ VẤN

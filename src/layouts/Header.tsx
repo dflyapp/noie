@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import Logo from 'assets/logo.webp'
+import Hamburger from './Hamburger'
 
 const Menu = styled.ul`
   li {
@@ -51,9 +52,12 @@ export default function Header() {
       }`}
     >
       <div className="ml-2 lg:ml-12">
-        <a className="cursor-pointer text-white">
-          <img src={Logo.src} className={scrolled ? 'w-12' : 'w-24'} />
-        </a>
+        <Link passHref={true} href="/" className="cursor-pointer text-white">
+          <img
+            src={Logo.src}
+            className={scrolled ? 'w-12 cursor-pointer' : 'w-24 cursor-pointer'}
+          />
+        </Link>
       </div>
       <div>
         <Menu className="hidden uppercase text-white lg:flex">
@@ -74,8 +78,14 @@ export default function Header() {
           </li>
         </Menu>
       </div>
-      <div className="mr-2 lg:mr-12">
-        <Register className="uppercase text-white">Đăng ký tư vấn</Register>
+      <div className="mr-2 flex lg:mr-12">
+        <Register className="hidden uppercase text-white lg:block">
+          Đăng ký tư vấn
+        </Register>
+        {/* hamburger */}
+        <div className="block lg:hidden">
+          <Hamburger className="" />
+        </div>
       </div>
     </Wrapper>
   )

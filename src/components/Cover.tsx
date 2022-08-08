@@ -199,20 +199,35 @@ export default function Cover() {
           </div>
         </div>
         <div className="w-full lg:w-1/2">
+          <h2 className="mt-24 block text-center lg:hidden">
+            Thiết kế kiến trúc
+          </h2>
           <div ref={ref1a}>
             <img className="mt-12 w-full" src={Detail1a.src} alt="1a" />
           </div>
+          <h2 className="mt-24 block text-center lg:hidden">
+            Thiết kế nội thất
+          </h2>
           <div ref={ref2a}>
             <img className="mt-12 w-full" src={Detail2a.src} alt="2a" />
           </div>
           <img alt="dich vu" className="mt-12 w-full" src={Detail2b.src} />
+          <h2 className="mt-24 block text-center lg:hidden">
+            Thi công phần thô
+          </h2>
           <div ref={ref3a}>
             <img className="mt-12 w-full" src={Detail3a.src} alt="3a" />
           </div>
           <img alt="dich vu" className="mt-12 w-full" src={Detail3b.src} />
+          <h2 className="mt-24 block text-center lg:hidden">
+            Thi công phần hoàn thiện
+          </h2>
           <div ref={ref4a}>
             <img className="mt-12 w-full" src={Detail4a.src} alt="4a" />
           </div>
+          <h2 className="mt-24 block text-center lg:hidden">
+            Thi công phần nội thất
+          </h2>
           <div ref={ref5a}>
             <img className="mt-12 w-full" src={Detail5a.src} alt="5a" />
           </div>

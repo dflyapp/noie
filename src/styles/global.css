@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: fontBodyThin;
-  src: url('../assets/fonts/body/Montserrat-Thin.otf');
+  font-family: fontBodyLight;
+  src: url('../assets/fonts/body/Montserrat-Light.otf');
 }
 
 @font-face {
@@ -41,7 +41,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: fontBodyThin, sans-serif;
+  font-family: fontBodyLight, sans-serif;
   font-weight: 400;
   font-size: 18px;
   @apply text-gray-900;

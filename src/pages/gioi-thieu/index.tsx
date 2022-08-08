@@ -36,6 +36,10 @@ export default function GioiThieu() {
 
       <article className="container mx-auto flex flex-wrap bg-gray-200 py-12 text-gray-800">
         <div className="w-full px-12 md:w-1/2">
+          <section className="block lg:hidden my-8 text-center">
+            <h3>THI CÔNG</h3>
+            <h4>KIẾN TRÚC - NỘI THẤT</h4>
+          </section>
           <section>
             <p>
               Để mang lại cho khách hàng những sản phẩm nội thất chất lượng và
@@ -53,14 +57,14 @@ export default function GioiThieu() {
               kế thi công nội thất trọn gói.
             </p>
           </section>
-          <section className="mt-8 text-center">
+          <section className="hidden lg:block mt-8 text-center">
             <h3>THI CÔNG</h3>
             <h4>KIẾN TRÚC - NỘI THẤT</h4>
           </section>
         </div>
 
         <div className="w-full px-12 md:w-1/2">
-          <section className="mb-8 text-center">
+          <section className="mt-24 mb-8 text-center lg:mt-0">
             <h3>THIẾT KẾ</h3>
             <h4>TRÃI NGHIỆM KHÔNG GIAN</h4>
           </section>
@@ -86,12 +90,10 @@ export default function GioiThieu() {
         </div>
       </article>
 
-      <section className="mt-24 bg-brown px-24 py-12 text-center text-white">
+      <section className="mt-24 bg-brown px-2 py-12 text-center text-white lg:px-24">
         <div className="flex flex-wrap">
           <div className="w-full px-2 md:w-1/2 lg:w-1/4">
-            <div
-              className="flex justify-center mt-8 md:mt-4 lg:-mt-24"
-            >
+            <div className="mt-8 flex justify-center md:mt-4 lg:-mt-24">
               <svg
                 width="80"
                 height="80"
@@ -118,9 +120,7 @@ export default function GioiThieu() {
             </p>
           </div>
           <div className="w-full px-2 md:w-1/2 lg:w-1/4">
-            <div
-              className="flex justify-center mt-8 md:mt-4 lg:-mt-24"
-            >
+            <div className="mt-8 flex justify-center md:mt-4 lg:-mt-24">
               <svg
                 width="80"
                 height="80"
@@ -168,9 +168,7 @@ export default function GioiThieu() {
             </p>
           </div>
           <div className="w-full px-2 md:w-1/2 lg:w-1/4">
-            <div
-              className="flex justify-center mt-8 md:mt-4 lg:-mt-24"
-            >
+            <div className="mt-8 flex justify-center md:mt-4 lg:-mt-24">
               <svg
                 width="82"
                 height="81"
@@ -213,9 +211,7 @@ export default function GioiThieu() {
             </p>
           </div>
           <div className="w-full px-2 md:w-1/2 lg:w-1/4">
-            <div
-              className="flex justify-center mt-8 md:mt-4 lg:-mt-24"
-            >
+            <div className="mt-8 flex justify-center md:mt-4 lg:-mt-24">
               <svg
                 width="79"
                 height="80"

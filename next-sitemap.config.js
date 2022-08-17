@@ -1,4 +1,5 @@
 module.exports = {
   siteUrl: 'https://www.noie.vn/',
-  generateRobotsTxt: true, // (optional)
+  generateRobotsTxt: true,
+  exclude: ['/admin', '/admin/*'],
 }

@@ -4,9 +4,9 @@ export default function GioiThieu() {
   return (
     <SubPageLayout
       metaTitle="NOIE - Giới thiệu"
-      metaDescription="Giới thiệu"
+      metaDescription="Giới thiệu về NOIE"
       pageNumber={1}
-      coverTitle="Giới thiệu"
+      coverTitle="Giới thiệu về NOIE"
     >
       <h1 className="text-center">GIỚI THIỆU VỀ NOIE VIỆT NAM</h1>
       <div className="container mx-auto">
@@ -36,7 +36,7 @@ export default function GioiThieu() {
 
       <article className="container mx-auto flex flex-wrap bg-gray-200 py-12 text-gray-800">
         <div className="w-full px-12 md:w-1/2">
-          <section className="block lg:hidden my-8 text-center">
+          <section className="my-8 block text-center lg:hidden">
             <h3>THI CÔNG</h3>
             <h4>KIẾN TRÚC - NỘI THẤT</h4>
           </section>
@@ -57,7 +57,7 @@ export default function GioiThieu() {
               kế thi công nội thất trọn gói.
             </p>
           </section>
-          <section className="hidden lg:block mt-8 text-center">
+          <section className="mt-8 hidden text-center lg:block">
             <h3>THI CÔNG</h3>
             <h4>KIẾN TRÚC - NỘI THẤT</h4>
           </section>

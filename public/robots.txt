@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.noie.vn/
+Host: https://noie.vn/
 
 # Sitemaps
-Sitemap: https://www.noie.vn/sitemap.xml
+Sitemap: https://noie.vn/sitemap.xml
